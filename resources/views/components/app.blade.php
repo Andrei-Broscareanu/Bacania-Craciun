@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Vegefoods - Free Bootstrap 4 Template by Colorlib</title>
+    <title>Bacania Craciun</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -30,14 +30,14 @@
                 <div class="row d-flex">
                     <div class="col-md pr-4 d-flex topper align-items-center">
                         <div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
-                        <span class="text">+ 1235 2355 98</span>
+                        <span class="text">+407ALOBACANIA</span>
                     </div>
                     <div class="col-md pr-4 d-flex topper align-items-center">
                         <div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
-                        <span class="text">youremail@email.com</span>
+                        <span class="text">adresadvs@email.com</span>
                     </div>
                     <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
-                        <span class="text">3-5 Business days delivery &amp; Free Returns</span>
+                        <span class="text">Ridicare Produse Din Magazin</span>
                     </div>
                 </div>
             </div>
@@ -46,7 +46,7 @@
 </div>
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-        <a class="navbar-brand" href="index.html">Vegefoods</a>
+        <a class="navbar-brand" href="index.html">Bacania Craciun</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="oi oi-menu"></span> Menu
         </button>
@@ -55,7 +55,7 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Magazin</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown04">
                         <a class="dropdown-item" href="shop.html">Shop</a>
                         <a class="dropdown-item" href="wishlist.html">Wishlist</a>
@@ -64,7 +64,7 @@
                         <a class="dropdown-item" href="checkout.html">Checkout</a>
                     </div>
                 </li>
-                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">Despre Noi</a></li>
                 <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
                 <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
                 <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
@@ -92,8 +92,8 @@
         <div class="row mb-5">
             <div class="col-md">
                 <div class="ftco-footer-widget mb-4">
-                    <h2 class="ftco-heading-2">Vegefoods</h2>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+                    <h2 class="ftco-heading-2">Bacania Craciun</h2>
+                    <p>Mâncarea sănătoasă este un mod de viață, așa că este important să stabilească rutine simple, realiste și, în cele din urmă, viabile.</p>
                     <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                         <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                         <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -103,12 +103,11 @@
             </div>
             <div class="col-md">
                 <div class="ftco-footer-widget mb-4 ml-md-5">
-                    <h2 class="ftco-heading-2">Menu</h2>
+                    <h2 class="ftco-heading-2">Meniu</h2>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="py-2 d-block">Shop</a></li>
-                        <li><a href="#" class="py-2 d-block">About</a></li>
-                        <li><a href="#" class="py-2 d-block">Journal</a></li>
-                        <li><a href="#" class="py-2 d-block">Contact Us</a></li>
+                        <li><a href="#" class="py-2 d-block">Magazin</a></li>
+                        <li><a href="#" class="py-2 d-block">Despre Noi</a></li>
+                        <li><a href="#" class="py-2 d-block">Contacteaza-ne</a></li>
                     </ul>
                 </div>
             </div>
@@ -117,13 +116,11 @@
                     <h2 class="ftco-heading-2">Help</h2>
                     <div class="d-flex">
                         <ul class="list-unstyled mr-l-5 pr-l-3 mr-4">
-                            <li><a href="#" class="py-2 d-block">Shipping Information</a></li>
-                            <li><a href="#" class="py-2 d-block">Returns &amp; Exchange</a></li>
-                            <li><a href="#" class="py-2 d-block">Terms &amp; Conditions</a></li>
-                            <li><a href="#" class="py-2 d-block">Privacy Policy</a></li>
+                            <li><a href="#" class="py-2 d-block">Informatii Despre Produse</a></li>
+                            <li><a href="#" class="py-2 d-block">Termeni &amp; Conditii</a></li>
+                            <li><a href="#" class="py-2 d-block">Politica Noastra</a></li>
                         </ul>
                         <ul class="list-unstyled">
-                            <li><a href="#" class="py-2 d-block">FAQs</a></li>
                             <li><a href="#" class="py-2 d-block">Contact</a></li>
                         </ul>
                     </div>
@@ -131,26 +128,18 @@
             </div>
             <div class="col-md">
                 <div class="ftco-footer-widget mb-4">
-                    <h2 class="ftco-heading-2">Have a Questions?</h2>
+                    <h2 class="ftco-heading-2">Aveti vreo Intrebare?</h2>
                     <div class="block-23 mb-3">
                         <ul>
-                            <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-                            <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-                            <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+                            <li><span class="icon icon-map-marker"></span><span class="text">Adresa Bacanie</span></li>
+                            <li><a href="#"><span class="icon icon-phone"></span><span class="text">+40ALOBACANIA</span></a></li>
+                            <li><a href="#"><span class="icon icon-envelope"></span><span class="text">bacania@email.com</span></a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12 text-center">
 
-                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                </p>
-            </div>
-        </div>
     </div>
 </footer>
 
