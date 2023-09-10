@@ -23,3 +23,4 @@ Route::get('/',[IndexController::class,'index'])->name('home');
 Route::get('/shop', [ProductController::class, 'shop'])->name('shop');
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
+Route::get('/product/{product}', [ProductController::class, 'show'])->name('view-product');

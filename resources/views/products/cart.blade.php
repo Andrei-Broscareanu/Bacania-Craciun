@@ -1,154 +1,190 @@
 <x-app>
-    <div class="hero-wrap hero-bread" style="background-image: url('images/bg_1.jpg');">
+    <section class="hero hero-normal">
         <div class="container">
-            <div class="row no-gutters slider-text align-items-center justify-content-center">
-                <div class="col-md-9 ftco-animate text-center">
-                    <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Cart</span></p>
-                    <h1 class="mb-0 bread">My Cart</h1>
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="hero__categories">
+                        <div class="hero__categories__all">
+                            <i class="fa fa-bars"></i>
+                            <span>All departments</span>
+                        </div>
+                        <ul>
+                            <li><a href="#">Fresh Meat</a></li>
+                            <li><a href="#">Vegetables</a></li>
+                            <li><a href="#">Fruit & Nut Gifts</a></li>
+                            <li><a href="#">Fresh Berries</a></li>
+                            <li><a href="#">Ocean Foods</a></li>
+                            <li><a href="#">Butter & Eggs</a></li>
+                            <li><a href="#">Fastfood</a></li>
+                            <li><a href="#">Fresh Onion</a></li>
+                            <li><a href="#">Papayaya & Crisps</a></li>
+                            <li><a href="#">Oatmeal</a></li>
+                            <li><a href="#">Fresh Bananas</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="hero__search">
+                        <div class="hero__search__form">
+                            <form action="#">
+                                <div class="hero__search__categories">
+                                    All Categories
+                                    <span class="arrow_carrot-down"></span>
+                                </div>
+                                <input type="text" placeholder="What do yo u need?">
+                                <button type="submit" class="site-btn">SEARCH</button>
+                            </form>
+                        </div>
+                        <div class="hero__search__phone">
+                            <div class="hero__search__phone__icon">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <div class="hero__search__phone__text">
+                                <h5>+65 11.188.888</h5>
+                                <span>support 24/7 time</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+    <!-- Hero Section End -->
 
-    <section class="ftco-section ftco-cart">
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 ftco-animate">
-                    <div class="cart-list">
-                        <table class="table">
-                            <thead class="thead-primary">
-                            <tr class="text-center">
-                                <th>&nbsp;</th>
-                                <th>&nbsp;</th>
-                                <th>Product name</th>
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>Shopping Cart</h2>
+                        <div class="breadcrumb__option">
+                            <a href="./index.html">Home</a>
+                            <span>Shopping Cart</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+
+    <!-- Shoping Cart Section Begin -->
+    <section class="shoping-cart spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="shoping__cart__table">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th class="shoping__product">Products</th>
                                 <th>Price</th>
                                 <th>Quantity</th>
                                 <th>Total</th>
+                                <th></th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr class="text-center">
-                                <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
-
-                                <td class="image-prod"><div class="img" style="background-image:url(images/product-3.jpg);"></div></td>
-
-                                <td class="product-name">
-                                    <h3>Bell Pepper</h3>
-                                    <p>Far far away, behind the word mountains, far from the countries</p>
+                            <tr>
+                                <td class="shoping__cart__item">
+                                    <img src="img/cart/cart-1.jpg" alt="">
+                                    <h5>Vegetable’s Package</h5>
                                 </td>
-
-                                <td class="price">$4.90</td>
-
-                                <td class="quantity">
-                                    <div class="input-group mb-3">
-                                        <input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
+                                <td class="shoping__cart__price">
+                                    $55.00
+                                </td>
+                                <td class="shoping__cart__quantity">
+                                    <div class="quantity">
+                                        <div class="pro-qty">
+                                            <input type="text" value="1">
+                                        </div>
                                     </div>
                                 </td>
-
-                                <td class="total">$4.90</td>
-                            </tr><!-- END TR-->
-
-                            <tr class="text-center">
-                                <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
-
-                                <td class="image-prod"><div class="img" style="background-image:url(images/product-4.jpg);"></div></td>
-
-                                <td class="product-name">
-                                    <h3>Bell Pepper</h3>
-                                    <p>Far far away, behind the word mountains, far from the countries</p>
+                                <td class="shoping__cart__total">
+                                    $110.00
                                 </td>
-
-                                <td class="price">$15.70</td>
-
-                                <td class="quantity">
-                                    <div class="input-group mb-3">
-                                        <input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
+                                <td class="shoping__cart__item__close">
+                                    <span class="icon_close"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="shoping__cart__item">
+                                    <img src="img/cart/cart-2.jpg" alt="">
+                                    <h5>Fresh Garden Vegetable</h5>
+                                </td>
+                                <td class="shoping__cart__price">
+                                    $39.00
+                                </td>
+                                <td class="shoping__cart__quantity">
+                                    <div class="quantity">
+                                        <div class="pro-qty">
+                                            <input type="text" value="1">
+                                        </div>
                                     </div>
                                 </td>
-
-                                <td class="total">$15.70</td>
-                            </tr><!-- END TR-->
+                                <td class="shoping__cart__total">
+                                    $39.99
+                                </td>
+                                <td class="shoping__cart__item__close">
+                                    <span class="icon_close"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="shoping__cart__item">
+                                    <img src="img/cart/cart-3.jpg" alt="">
+                                    <h5>Organic Bananas</h5>
+                                </td>
+                                <td class="shoping__cart__price">
+                                    $69.00
+                                </td>
+                                <td class="shoping__cart__quantity">
+                                    <div class="quantity">
+                                        <div class="pro-qty">
+                                            <input type="text" value="1">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="shoping__cart__total">
+                                    $69.99
+                                </td>
+                                <td class="shoping__cart__item__close">
+                                    <span class="icon_close"></span>
+                                </td>
+                            </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-end">
-                <div class="col-lg-4 mt-5 cart-wrap ftco-animate">
-                    <div class="cart-total mb-3">
-                        <h3>Coupon Code</h3>
-                        <p>Enter your coupon code if you have one</p>
-                        <form action="#" class="info">
-                            <div class="form-group">
-                                <label for="">Coupon code</label>
-                                <input type="text" class="form-control text-left px-3" placeholder="">
-                            </div>
-                        </form>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="shoping__cart__btns">
+                        <a href="#" class="primary-btn cart-btn">CONTINUE SHOPPING</a>
+                        <a href="#" class="primary-btn cart-btn cart-btn-right"><span class="icon_loading"></span>
+                            Upadate Cart</a>
                     </div>
-                    <p><a href="checkout.html" class="btn btn-primary py-3 px-4">Apply Coupon</a></p>
                 </div>
-                <div class="col-lg-4 mt-5 cart-wrap ftco-animate">
-                    <div class="cart-total mb-3">
-                        <h3>Estimate shipping and tax</h3>
-                        <p>Enter your destination to get a shipping estimate</p>
-                        <form action="#" class="info">
-                            <div class="form-group">
-                                <label for="">Country</label>
-                                <input type="text" class="form-control text-left px-3" placeholder="">
-                            </div>
-                            <div class="form-group">
-                                <label for="country">State/Province</label>
-                                <input type="text" class="form-control text-left px-3" placeholder="">
-                            </div>
-                            <div class="form-group">
-                                <label for="country">Zip/Postal Code</label>
-                                <input type="text" class="form-control text-left px-3" placeholder="">
-                            </div>
-                        </form>
-                    </div>
-                    <p><a href="checkout.html" class="btn btn-primary py-3 px-4">Estimate</a></p>
-                </div>
-                <div class="col-lg-4 mt-5 cart-wrap ftco-animate">
-                    <div class="cart-total mb-3">
-                        <h3>Cart Totals</h3>
-                        <p class="d-flex">
-                            <span>Subtotal</span>
-                            <span>$20.60</span>
-                        </p>
-                        <p class="d-flex">
-                            <span>Delivery</span>
-                            <span>$0.00</span>
-                        </p>
-                        <p class="d-flex">
-                            <span>Discount</span>
-                            <span>$3.00</span>
-                        </p>
-                        <hr>
-                        <p class="d-flex total-price">
-                            <span>Total</span>
-                            <span>$17.60</span>
-                        </p>
-                    </div>
-                    <p><a href="checkout.html" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light">
-        <div class="container py-4">
-            <div class="row d-flex justify-content-center py-5">
-                <div class="col-md-6">
-                    <h2 style="font-size: 22px;" class="mb-0">Subcribe to our Newsletter</h2>
-                    <span>Get e-mail updates about our latest shops and special offers</span>
-                </div>
-                <div class="col-md-6 d-flex align-items-center">
-                    <form action="#" class="subscribe-form">
-                        <div class="form-group d-flex">
-                            <input type="text" class="form-control" placeholder="Enter email address">
-                            <input type="submit" value="Subscribe" class="submit px-3">
+                <div class="col-lg-6">
+                    <div class="shoping__continue">
+                        <div class="shoping__discount">
+                            <h5>Discount Codes</h5>
+                            <form action="#">
+                                <input type="text" placeholder="Enter your coupon code">
+                                <button type="submit" class="site-btn">APPLY COUPON</button>
+                            </form>
                         </div>
-                    </form>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="shoping__checkout">
+                        <h5>Cart Total</h5>
+                        <ul>
+                            <li>Subtotal <span>$454.98</span></li>
+                            <li>Total <span>$454.98</span></li>
+                        </ul>
+                        <a href="#" class="primary-btn">PROCEED TO CHECKOUT</a>
+                    </div>
                 </div>
             </div>
         </div>
