@@ -2,17 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
     public function shop()
     {
-        return view('products.shop');
+        $products = Product::all();
+        return view('products.shop',compact('products'));
     }
-    public function view()
+
+    public function show($slug)
     {
-        return view('products.single-product');
+        $product = Product::where('slug',$slug)->first();
+        return view('products.show', compact('product'));
     }
 }
 
