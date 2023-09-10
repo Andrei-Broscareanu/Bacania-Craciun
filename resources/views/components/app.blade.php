@@ -21,6 +21,14 @@
     <link rel="stylesheet" href="/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+    <!-- Scripts -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body>
@@ -52,9 +60,22 @@
                 <li><a href="#">English</a></li>
             </ul>
         </div>
+        @auth
+            <div class="header__top__right__auth">
+                <form action="{{route('logout')}}" method="POST" id="logout-mobile">
+                    @csrf
+                </form>
+                <a style="cursor:pointer;" onclick="document.querySelector('#logout-mobile').submit();"><i class="fa fa-user"></i> Logout</a>
+            </div>
+        @else
         <div class="header__top__right__auth">
-            <a href="#"><i class="fa fa-user"></i> Login</a>
+            <a href="{{route('login')}}"><i class="fa fa-user"></i> Login</a>
         </div>
+
+            <div class="header__top__right__auth">
+                <a href="{{route('register')}}"><i class="fa fa-user"></i> Register</a>
+            </div>
+        @endauth
     </div>
     <nav class="humberger__menu__nav mobile-menu">
         <ul>
@@ -118,9 +139,22 @@
                                 <li><a href="#">English</a></li>
                             </ul>
                         </div>
-                        <div class="header__top__right__auth">
-                            <a href="#"><i class="fa fa-user"></i> Login</a>
-                        </div>
+                        @auth
+                            <div class="header__top__right__auth">
+                                <form action="{{route('logout')}}" method="POST" id="logout-desktop">
+                                    @csrf
+                                </form>
+                                <a style="cursor:pointer;" onclick="document.querySelector('#logout-desktop').submit();"><i class="fa fa-user"></i> Logout</a>
+                            </div>
+                        @else
+                            <div class="header__top__right__auth">
+                                <a href="{{route('login')}}"><i class="fa fa-user"></i> Login</a>
+                            </div>
+
+                            <div class="header__top__right__auth">
+                                <a href="{{route('register')}}"><i class="fa fa-user"></i> Register</a>
+                            </div>
+                        @endauth
                     </div>
                 </div>
             </div>
@@ -171,6 +205,7 @@
 <main>
     {{$slot}}
 </main>
+
 
 <footer class="footer spad">
     <div class="container">
