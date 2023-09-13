@@ -10,7 +10,7 @@
                         </div>
                         <ul>
                             @foreach($categories as $category)
-                            <li><a href="#">{{$category->name}}</a></li>
+                            <li><a href="{{ route('shop', ['category' => $category->name]) }}">{{$category->name}}</a></li>
                             @endforeach
                         </ul>
                     </div>
@@ -32,7 +32,7 @@
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="hero__search__phone__text">
-                                <h5>+65 11.188.888</h5>
+                                <h5>+40777777777</h5>
                                 <span>support 24/7 time</span>
                             </div>
                         </div>
