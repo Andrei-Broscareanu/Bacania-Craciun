@@ -16,8 +16,6 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->timestamps();
-
-            //$table->foreignIdFor(Product::class)->constrained()->onDelete('cascade');
         });
     }
 
