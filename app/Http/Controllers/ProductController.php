@@ -15,10 +15,10 @@ class ProductController extends Controller
         if(request()->category) {
             $products = Product::with('category')->whereHas('category', function($query){
                 $query->where('name', request()->category);
-            });
+            })->get();
             $categories = Category::all();
         } else {
-            $products = Product::all();
+            $products = Product::take(12);
             $categories = Category::all();
         }
         if (request()->sort == 'low_high') {
