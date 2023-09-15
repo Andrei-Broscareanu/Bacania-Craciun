@@ -16,7 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
 Route::get('/',[IndexController::class,'index'])->name('homepage');
+Route::get('/coming-soon',[IndexController::class,'tempIndex']);
 Route::get('/shop', [ProductController::class, 'shop'])->name('shop');
 Route::get('/product{product}',[ProductController::class, 'show'])->name('view-product');
 //Route::get('/dashboard', function () {

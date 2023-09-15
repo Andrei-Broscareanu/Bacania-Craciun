@@ -12,4 +12,8 @@ class IndexController extends Controller
         return view('home',compact('categories'));
     }
 
+    public function tempIndex(){
+        return view('maintenance');
+    }
+
 }
