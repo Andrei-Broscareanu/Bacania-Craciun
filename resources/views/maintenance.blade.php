@@ -59,6 +59,8 @@
         <!--  -->
         <div class="simpleslide100">
             <div class="simpleslide100-item bg-img1" style="background-image: url('img/hero/comingSoon.jpg');"></div>
+            <div class="simpleslide100-item bg-img1" style="background-image: url('img/hero/comingSoon.jpg');"></div>
+            <div class="simpleslide100-item bg-img1" style="background-image: url('img/hero/comingSoon.jpg');"></div>
         </div>
     </div>
 </div>
