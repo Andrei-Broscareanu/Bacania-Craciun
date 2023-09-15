@@ -8,25 +8,31 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function shop(Request $request)
+    public function shop()
     {
-        if($request->query('search')){
-            $products = Product::search($request->query('search'))
-                ->where('published', true)
-                ->get();
-            $categories = Category::all();
-        }
+        $pagination = 9;
 
-        elseif($request->category) {
+        if(request()->category) {
             $products = Product::with('category')->whereHas('category', function($query){
                 $query->where('name', request()->category);
-            })->get();
+            });
             $categories = Category::all();
         } else {
             $products = Product::all();
             $categories = Category::all();
         }
-       return view('products.shop',compact('products','categories'));
+        if (request()->sort == 'low_high') {
+            $products = $products->orderBy('price')->paginate($pagination);
+        } elseif (request()->sort == 'high_low') {
+            $products = $products->orderBy('price', 'desc')->paginate($pagination);
+        } else {
+            $products = $products->paginate($pagination);
+        }
+
+        return view('products.shop')->with([
+            'products'=> $products,
+            'categories' => $categories,
+        ]);
     }
 
     public function show($slug)

@@ -27,5 +27,45 @@ class ProductSeeder extends Seeder
             'description' => 'Descrierea acestor castraveti',
             'price' => 6.77,
         ]);
+
+        DB::table('products')->insert([
+            'name' => 'Castraveti',
+            'slug' => 'slug',
+            'description' => 'Descrierea acestor castraveti',
+            'price' => 6.77,
+        ]);
+
+        DB::table('products')->insert([
+            'name' => 'Castraveti',
+            'slug' => 'slug',
+            'description' => 'Descrierea acestor castraveti',
+            'price' => 6.77,
+        ]);
+
+
+        DB::table('products')->insert([
+            'name' => 'Castraveti',
+            'slug' => 'slug',
+            'description' => 'Descrierea acestor castraveti',
+            'price' => 6.77,
+        ]);
+
+
+        DB::table('products')->insert([
+            'name' => 'Castraveti',
+            'slug' => 'slug',
+            'description' => 'Descrierea acestor castraveti',
+            'price' => 6.77,
+        ]);
+
+
+        DB::table('products')->insert([
+            'name' => 'Castraveti',
+            'slug' => 'slug',
+            'description' => 'Descrierea acestor castraveti',
+            'price' => 6.77,
+        ]);
+
+
     }
 }

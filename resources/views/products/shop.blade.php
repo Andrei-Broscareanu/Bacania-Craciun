@@ -310,16 +310,14 @@
                         <div class="row">
                             <div class="col-lg-4 col-md-5">
                                 <div class="filter__sort">
-                                    <span>Sort By</span>
-                                    <select>
-                                        <option value="0">Default</option>
-                                        <option value="0">Default</option>
-                                    </select>
+                                    <strong>Price:</strong>
+                                        <a href="{{route('shop', ['category'=> request()->category, 'sort' => 'low_high'])}}">Low to High</a>
+                                        <a href="{{route('shop', ['category'=> request()->category, 'sort' => 'high_low'])}}">High to Low</a>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="filter__found">
-                                    <h6><span>16</span> Products found</h6>
+                                    <h6><span>{{count($products)}}</span> Products found</h6>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-3">
@@ -349,12 +347,7 @@
                         </div>
                         @endforeach
                     </div>
-                    <div class="product__pagination">
-                        <a href="#">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#"><i class="fa fa-long-arrow-right"></i></a>
-                    </div>
+                    {{ $products->appends(request()->input())->links() }}
                 </div>
             </div>
         </div>
