@@ -1,9 +1,9 @@
 <?php
 
 
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AdminProductController;
+use App\Http\Controllers\AdminCategoryController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')
@@ -15,7 +15,12 @@ Route::prefix('admin')
     ->group(function () {
         Route::get('/', [AdminController::class, 'index'])->name('dashboard');
 
-//        Route::resource('products', ProductController::class);
+        Route::resource('products', AdminProductController::class);
+
+        Route::resource('categories', AdminCategoryController::class);
+
+        Route::post('/product/category',[AdminProductController::class,'addCategory'])->name('product-add-categories');
+        Route::delete('/product/category',[AdminProductController::class,'removeCategory'])->name('product-remove-categories');
 //
 //        Route::resource('users', UserController::class);
 

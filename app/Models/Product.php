@@ -13,9 +13,24 @@ class Product extends Model
 
     protected $fillable = ['name', 'description', 'price', 'category_id'];
 
-    public function category()
+    public function categories(){
+        return $this->belongsToMany('App\Models\Category');
+    }
+
+    public function images(){
+        return $this->hasMany(Image::class);
+    }
+
+    public function unassociatedCategories()
     {
-        return $this->hasMany(Category::class);
+        return Category::whereDoesntHave('products', function ($query) {
+            $query->where('product_id', $this->id);
+        })->get();
+
+    }
+
+    public function getCategoriesCount(){
+        return $this->categories()->count();
     }
 
     public function toSearchableArray(): array
