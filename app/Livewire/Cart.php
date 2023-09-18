@@ -19,7 +19,7 @@ class Cart extends Component
       }
 
       request()->session()->flash('success','Item added to cart successfully');
-      //finish logic + alert for user
+      //finish logic
     }
 
     public function render()
