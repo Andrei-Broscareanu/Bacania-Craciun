@@ -13,20 +13,26 @@
                                 @if($index === 0)
                                     <div class="carousel-item active">
                                         <img src="{{asset('storage/' . $image->filename)}}" alt="...">
+                                        <form action="{{route('admin.product-remove-images')}}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <input type="hidden" name="image_id" value="{{$image->id}}">
+                                            <button type="submit" class="btn btn-danger">Remove Image</button>
+                                        </form>
                                     </div>
                                 @else
                                     <div class="carousel-item">
                                         <img src="{{asset('storage/' . $image->filename)}}" alt="...">
+                                        <form action="{{route('admin.product-remove-images')}}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <input type="hidden" name="image_id" value="{{$image->id}}">
+                                            <button type="submit" class="btn btn-danger">Remove Image</button>
+                                        </form>
                                     </div>
                                 @endif
                             @endforeach
                         </div>
-
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                                data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
                         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
                                 data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
@@ -103,6 +109,12 @@
                                 <div class="col-sm-10">
                                     <textarea rows="10" type="text" class="form-control"
                                               name="description">{{$product->description}}</textarea>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="card-body">
+                                    <input class="filepond" type="file" name="file[]" multiple>
                                 </div>
                             </div>
 
@@ -183,3 +195,20 @@
         </div>
     </main>
 </x-admin-nav>
+
+<script type="module">
+    FilePond.setOptions({
+        server: {
+            url: '/filepond/api',
+            process: '/process',
+            revert: '/process',
+            patch: "?patch=",
+            headers: {
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            }
+        }
+    });
+
+    const input = document.querySelector('input.filepond');
+    const pond = FilePond.create(input);
+</script>

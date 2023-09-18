@@ -8,30 +8,32 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function shop()
+    public function shop(Request $request)
     {
-        $pagination = 9;
-
-        if(request()->category) {
-            $products = Product::with('category')->whereHas('category', function($query){
-                $query->where('name', request()->category);
-            })->get();
+        $paginate = 10;
+        if(request()->category){
+            $products = Product::with('categories')->whereHas('categories',function($query){
+                $query->where('slug',request()->category);
+            })->where('published', 1);
             $categories = Category::all();
         } else {
-            $products = Product::take(12);
+            $products = Product::search($request->query('search'))
+                ->where('published', 1)
+                ->take(5);
             $categories = Category::all();
         }
-        if (request()->sort == 'low_high') {
-            $products = $products->orderBy('price')->paginate($pagination);
-        } elseif (request()->sort == 'high_low') {
-            $products = $products->orderBy('price', 'desc')->paginate($pagination);
+
+        if(request()->sort == 'low_high'){
+            $products = $products->orderBy('price')->paginate($paginate);
+        } elseif(request()->sort == 'high_low'){
+            $products = $products->orderBy('price','desc')->paginate($paginate);
         } else {
-            $products = $products->paginate($pagination);
+            $products = $products->paginate($paginate);
         }
 
-        return view('products.shop')->with([
-            'products'=> $products,
-            'categories' => $categories,
+        return view('products.shop',[
+            'products'=>$products,
+            'categories'=>$categories,
         ]);
     }
 

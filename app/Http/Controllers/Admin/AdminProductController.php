@@ -50,6 +50,11 @@ class AdminProductController extends Controller
         return back();
     }
 
+    public function removeImage(Request $request){
+        $image = Image::where('id',$request->image_id);
+        $image->delete();
+        return back();
+    }
 
     public function update(Request $request,Product $product){
         $validatedData = $request->validate([
@@ -71,6 +76,19 @@ class AdminProductController extends Controller
         $product->details = $validatedData['details'];
         $product->description = $validatedData['description'];
         $product->save();
+
+        $fileponds = $request->file;
+        foreach ($fileponds as $serverId) {
+            if (!$serverId)
+                continue;
+            $filepond = app(Filepond::class);
+            $path = $filepond->getPathFromServerId($serverId);
+            $image = new Image();
+            $image->filename = $path;
+            Storage::move($path, '/public/' . $path);
+            $product->images()->save($image);
+            $product->save();
+        }
 
         return back();
     }
