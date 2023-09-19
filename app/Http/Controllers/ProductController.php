@@ -11,11 +11,13 @@ class ProductController extends Controller
     public function shop(Request $request)
     {
         $paginate = 10;
+        $categoryName = null;
         if(request()->category){
             $products = Product::with('categories')->whereHas('categories',function($query){
-                $query->where('slug',request()->category);
-            })->where('published', 1);
+                $query->where('name',request()->category);
+            });
             $categories = Category::all();
+            $categoryName = optional($categories->where('name', $request->category)->first())->name;
         } else {
             $products = Product::search($request->query('search'))
                 ->where('published', 1)
@@ -31,9 +33,10 @@ class ProductController extends Controller
             $products = $products->paginate($paginate);
         }
 
-        return view('products.shop',[
+        return view('products.shop')->with([
             'products'=>$products,
             'categories'=>$categories,
+            'categoryName' => $categoryName,
         ]);
     }
 
