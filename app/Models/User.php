@@ -43,6 +43,11 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    public function reviews(){
+        return $this->hasMany(Review::class);
+    }
+
+
     public function isAdmin(): bool
     {
         return $this->is_admin === 1;
