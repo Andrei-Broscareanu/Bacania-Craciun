@@ -15,7 +15,7 @@ class ProductController extends Controller
         if(request()->category){
             $products = Product::with('categories')->whereHas('categories',function($query){
                 $query->where('name',request()->category);
-            });
+            })->where('published', 1);
             $categories = Category::all();
             $categoryName = optional($categories->where('name', $request->category)->first())->name;
         } else {
