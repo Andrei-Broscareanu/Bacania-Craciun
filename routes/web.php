@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
@@ -22,6 +23,7 @@ Route::get('/',[IndexController::class,'index'])->name('homepage');
 Route::get('/coming-soon',[IndexController::class,'tempIndex']);
 Route::get('/shop', [ProductController::class, 'shop'])->name('shop');
 Route::get('/product{product}',[ProductController::class, 'show'])->name('view-product');
+Route::get('/cart',[CartController::class,'index'])->name('cart');
 //Route::get('/dashboard', function () {
 //    return view('dashboard');
 //})->middleware(['auth', 'verified'])->name('dashboard');
