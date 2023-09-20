@@ -31,7 +31,7 @@ class Cart
         $products = Product::query()->whereIn('id', $ids)->get();
         $cartItems = Arr::keyBy($cartItems, 'product_id');
 
-        return [$products, $cartItems];
+        return [$products,$cartItems];
     }
 
     public static function moveCartItemsIntoDB(){

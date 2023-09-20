@@ -1,10 +1,4 @@
-{{--<li>--}}
-{{--@if(session('success_cart'))--}}
-{{--  <a><i class="fa fa-check"></i></a>--}}
-{{--@else--}}
-{{--<a wire:click="handle"><i class="fa fa-shopping-cart"></i></a>--}}
-{{--    @endif--}}
-{{--</li>--}}
+
 
 
 <div>
@@ -17,6 +11,7 @@
         </div>
     </div>
 </div>
+
         <button wire:click="handle" class="primary-btn">ADD TO CART</button>
 </div>
 

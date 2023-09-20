@@ -14,7 +14,6 @@ class CartController extends Controller
         foreach($products as $product) {
             $total += $product->price * $cartItems[$product->id]['quantity'];
         }
-        $total = number_format($total,1);
-        return view('products.cart',compact('cartItems','products','total'));
+        return view('products.cart',compact('products','total','cartItems'));
     }
 }

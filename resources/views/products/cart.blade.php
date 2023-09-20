@@ -20,41 +20,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="shoping__cart__table">
-                        <table>
-                            <thead>
-                            <tr>
-                                <th class="shoping__product">Products</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
-                                <th></th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($products as $product)
-                            <tr>
-                                <td class="shoping__cart__item">
-                                    <img  width="75" height="75"  src="{{asset('storage/' . $product->images[0]->filename)}}" alt="">
-                                    <h5>{{$product->name}}</h5>
-                                </td>
-                                <td class="shoping__cart__price">
-                                    {{$product->price}}
-                                </td>
-                                <td class="shoping__cart__quantity">
-                                    <div class="quantity">
-                                        <div class="pro-qty">
-                                            <input type="text" value="{{$cartItems[$product->id]['quantity']}}">
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="shoping__cart__item__close">
-                                    <i class="fa fa-close" style="font-size:24px;cursor:pointer;"></i>
-                                </td>
-                            </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                    </div>
+                    @livewire('removeFromCart')
                 </div>
             </div>
             <div class="row">

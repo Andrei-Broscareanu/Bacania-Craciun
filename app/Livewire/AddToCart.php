@@ -14,6 +14,7 @@ class AddToCart extends Component
 
     public function handle()
     {
+
         $product = Product::where('slug', $this->productSlug)->first();
         if($this->quantity === null)
             $this->quantity = 1;
