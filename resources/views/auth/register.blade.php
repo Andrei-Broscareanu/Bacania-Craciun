@@ -1,5 +1,5 @@
 <x-app>
-    <div class="flex justify-center items-center h-screen mb-5 mt-5">
+    <div class="flex justify-center items-center h-3/4 mb-4 mt-4">
     <form method="POST" action="{{ route('register') }}">
         @csrf
 

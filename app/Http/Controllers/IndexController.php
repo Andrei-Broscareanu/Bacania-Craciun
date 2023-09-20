@@ -16,4 +16,12 @@ class IndexController extends Controller
         return view('maintenance');
     }
 
+    public function aboutus() {
+        return view('about-us');
+    }
+
+    public function contact() {
+        return view('contact');
+    }
+
 }

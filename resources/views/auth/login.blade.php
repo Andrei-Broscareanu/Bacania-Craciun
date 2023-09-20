@@ -1,7 +1,7 @@
 <x-app>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
-    <div class="flex justify-center items-center h-screen mb-5 mt-5">
+    <div class="flex justify-center items-center h-3/4 mb-4 mt-4">
     <form method="POST" action="{{ route('login') }}">
         @csrf
         <div>
