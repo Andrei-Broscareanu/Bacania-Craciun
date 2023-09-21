@@ -55,7 +55,7 @@ class AddToCart extends Component
             Cookie::queue('cart_items',json_encode($cartItems),60 * 24 * 30);
         }
 
-        request()->session()->flash('success_cart', 'Item added to cart successfully');
+//        $this->dispathBrowserEvent('success',['message'=>'test']);
     }
 
     public function render()

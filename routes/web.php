@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
@@ -26,9 +27,8 @@ Route::get('/about-us', [IndexController::class, 'aboutus'])->name('about-us');
 Route::get('/contact', [IndexController::class, 'contact'])->name('contact');
 Route::get('/product/{product}',[ProductController::class, 'show'])->name('view-product');
 Route::get('/cart',[CartController::class,'index'])->name('cart');
-//Route::get('/dashboard', function () {
-//    return view('dashboard');
-//})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/checkout',[CheckoutController::class,'index'])->middleware('checkoutAccess')->name('checkout');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
