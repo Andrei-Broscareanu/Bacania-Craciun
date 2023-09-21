@@ -44,16 +44,21 @@ class ProductController extends Controller
     {
         $product = Product::where('slug',$slug)->first();
         $productId = $product->id;
+        if($product->quantity > 5){
+            $stockLevel = 'In Stoc';
+        } elseif($product->quantity <= 5 && $product->quantity > 0) {
+            $stockLevel = 'Stoc redus';
+        } else {
+            $stockLevel = 'Nu este disponibil';
+        }
+        $categoryIds = $product->categories()->pluck('categories.id');
+        $relatedProducts = Product::whereHas('categories', function ($query) use ($categoryIds) {
+            $query->whereIn('categories.id', $categoryIds);
+        })->where('id', '<>', $product->id)->limit(5)->get();
 
-        $relatedProducts = Product::select('products.*')
-            ->whereHas('categories', function ($query) use ($productId) {
-                $query->whereHas('products', function ($query) use ($productId) {
-                    $query->where('products.id', '!=', $productId); // Specify table alias to disambiguate
-                });
-            })
-            ->get();
 
-        return view('products.show', compact('product','relatedProducts'));
+
+        return view('products.show', compact('product','relatedProducts' , 'stockLevel'));
     }
 }
 

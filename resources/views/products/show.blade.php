@@ -45,13 +45,23 @@
                         </div>
                         <div class="product__details__price">{{$product->price}} RON</div>
                         <p>{{$product->details}}</p>
-                        <div>
-                            @livewire('notification')
-                            @livewire('AddToCart',['productSlug' => $product->slug])
-                        </div>
+                        @if($stockLevel !== 'Nu este disponibil')
+                        @livewire('AddToCart',['productSlug' => $product->slug])
+                        @endif
                         <ul>
-                            <li><b>Disponibilitate</b> <span>(aici sa facem functia )</span></li>
-                            <li><b>Ridicare Colet</b> <span>Din magazinul nostru <samp>Zilnic intre orele 10:00-20:00</samp></span></li>
+
+                            @if($stockLevel === 'Nu este disponibil')
+                                <li><b>Disponibilitate</b> <span class="text-danger">{{$stockLevel}}</span></li>
+                            @endif
+                            @if($stockLevel === 'In Stoc')
+                                    <li><b>Disponibilitate</b> <span class="text-success">{{$stockLevel}}</span></li>
+                            @endif
+
+                            @if($stockLevel === 'Stoc redus')
+                                    <li><b>Disponibilitate</b> <span class="text-warning">{{$stockLevel}}</span></li>
+                            @endif
+
+                            <li><b>Ridicare</b> <span>Din magazinul nostru <samp>Zilnic intre orele 10:00-20:00</samp></span></li>
                         </ul>
                     </div>
                 </div>
@@ -77,7 +87,7 @@
                             <div class="tab-pane" id="tabs-3" role="tabpanel">
                                 <div class="product__details__tab__desc">
                                     <h6>Reviews</h6>
-                                    <p>mhnkymklkjhmi</p>
+                                    <p></p>
                                 </div>
                             </div>
                         </div>
@@ -94,7 +104,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title related__product__title">
-                        <h2>Related Product</h2>
+                        <h2>Produse asemanatoare</h2>
                     </div>
                 </div>
             </div>
@@ -119,15 +129,19 @@
         </div>
     </section>
 
-{{--    @livewireScripts--}}
-{{--    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>--}}
-{{--    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>--}}
-{{--    <script>--}}
-{{--        window.livewire.on('itemAddedToCart', (message) => {--}}
-{{--            // Trigger Toastr notification or your notification logic here--}}
-{{--            toastr.success(message);--}}
-{{--        });--}}
-{{--    </script>--}}
+            <script src="/js/sweetalert/sweetalert.min.js"></script>
+    <script>
+        document.querySelector('.add-to-cart').addEventListener('click',function(){
+            swal({
+                icon: 'success',
+                title: 'Produsul a fost adaugat in cos',
+                showConfirmButton: false,
+                timer: 3500
+            })
+        });
+
+    </script>
+
 
 </x-app>
 

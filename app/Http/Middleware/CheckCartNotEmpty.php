@@ -18,7 +18,7 @@ class CheckCartNotEmpty
     {
         $total = Cart::getCartTotal();
         if($total <= 0){
-            return redirect('/cart');
+            return redirect('/cart')->with('warning','Pagina de checkout nu se poate accesa daca cosul nu are produse.');
         }
         return $next($request);
     }

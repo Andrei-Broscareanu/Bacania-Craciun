@@ -17,7 +17,26 @@
             </div>
             <div class="checkout__form">
                 <h4>Detalii de facturare</h4>
-                <form action="" method="POST">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-check mb-2" id="persoana-fizica-btn">
+                                    <input class="form-check-input" type="radio" name="metodaFacturare" value="persoanaFizica" id="persoanaFizica" checked>
+                                    <label class="form-check-label" for="persoanaFizica">Persoana Fizica</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-check mb-2" id="persoana-juridica-btn">
+                                    <input class="form-check-input" type="radio" name="metodaFacturare" value="persoanaJuridica" id="persoanaJuridica">
+                                    <label class="form-check-label" for="persoanaJuridica">Persoana Juridica</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form action="" method="POST">
                     @csrf
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
@@ -40,6 +59,18 @@
                             <div class="checkout__input">
                                 <p>Cos postal<span>*</span></p>
                                 <input type="text" name="postal_code">
+                            </div>
+                            <div class="checkout__input persoana-juridica" style="display:none;">
+                                <p>CIF<span>*</span></p>
+                                <input type="text" name="CIF">
+                            </div>
+                            <div class="checkout__input persoana-juridica" style="display:none;">
+                                <p>Nr. inregistrare Registrul Comertului<span>*</span></p>
+                                <input type="text" name="NIRC">
+                            </div>
+                            <div class="checkout__input persoana-juridica" style="display:none;">
+                                <p>Denumire Societate<span>*</span></p>
+                                <input type="text" name="DS">
                             </div>
                             <div class="row">
                                 <div class="col-lg-6">
@@ -78,5 +109,23 @@
                 </form>
             </div>
         </div>
+        </div>
     </section>
 </x-app>
+
+<script>
+    var persoanaJuridicaInputs = document.querySelectorAll('.persoana-juridica');
+
+    document.querySelector('#persoana-juridica-btn').addEventListener('click',function(){
+        for( let i = 0 ; i < persoanaJuridicaInputs.length ; i ++){
+            persoanaJuridicaInputs[i].style.display = 'block';
+        }
+    });
+
+
+    document.querySelector('#persoana-fizica-btn').addEventListener('click',function(){
+        for( let i = 0 ; i < persoanaJuridicaInputs.length ; i ++){
+            persoanaJuridicaInputs[i].style.display = 'none';
+        }
+    });
+</script>

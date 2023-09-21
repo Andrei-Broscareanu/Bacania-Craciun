@@ -11,6 +11,7 @@
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/maintenance/images/icons/favicon.ico"/>
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
@@ -46,7 +47,7 @@
     </div>
     <div class="humberger__menu__cart">
         <ul>
-            <li><a href="/cart"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+            <li><a href="/cart"><i class="fa fa-shopping-bag"></i> </a></li>
         </ul>
     </div>
     <div class="humberger__menu__widget">
@@ -134,7 +135,7 @@
             <div class="col-lg-3">
                 <div class="header__cart">
                     <ul>
-                        <li><a href="/cart"><i style="font-size: 30px;" class="fa fa-shopping-bag"></i> <span style="font-size: 13px;">3</span></a></li>
+                        <li><a href="/cart"><i style="font-size: 30px;" class="fa fa-shopping-bag"></i></a></li>
                     </ul>
                 </div>
             </div>

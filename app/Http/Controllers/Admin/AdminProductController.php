@@ -75,6 +75,7 @@ class AdminProductController extends Controller
         $product->quantity = $validatedData['quantity'];
         $product->details = $validatedData['details'];
         $product->description = $validatedData['description'];
+        $product->featured = $request->featured;
         $product->save();
 
         $fileponds = $request->file;
@@ -103,6 +104,7 @@ class AdminProductController extends Controller
 
         $product = new Product($validatedData);
         $product->quantity = $request->quantity;
+        $product->featured = $request->featured;
         $product->slug = Str::slug($request->name);
 
         $product->save();

@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->string('billing_email')->nullable();
-            $table->foreignIdFor(User::class)->constrained()->onDelete('cascade');
+            $table->foreignIdFor(User::class)->nullable()->constrained()->onDelete('cascade');
             $table->string('billing_name')->nullable();
             $table->string('billing_address')->nullable();
             $table->string('billing_city')->nullable();

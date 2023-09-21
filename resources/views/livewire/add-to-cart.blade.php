@@ -10,8 +10,9 @@
     </div>
 </div>
 
-        <button wire:click="handle" class="primary-btn">ADD TO CART</button>
+        <button wire:click="handle" class="add-to-cart primary-btn">Adauga in cos</button>
 </div>
+
 
 
 

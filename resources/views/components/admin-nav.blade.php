@@ -107,7 +107,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="components-breadcrumbs.html">
+                    <a href="{{route('admin.users.index')}}">
                         <i class="bi bi-circle"></i><span>Users</span>
                     </a>
                 </li>

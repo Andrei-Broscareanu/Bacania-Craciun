@@ -51,6 +51,7 @@
                         <x-admin.data key="City">{{$order->billing_city}}</x-admin.data>
                         <x-admin.data key="Postal Code">{{$order->billing_postalcode}}</x-admin.data>
                         <x-admin.data key="Address">{{$order->billing_address}}</x-admin.data>
+                        <x-admin.data key="Order specifications">{{$order->observations}}</x-admin.data>
                     </div>
                 </div>
             </div>

@@ -81,6 +81,13 @@
                             </div>
 
                             <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">Product importance</label>
+                                <div class="col-sm-10">
+                                    <input type="number" value="{{$product->featured}}" class="form-control" name="featured">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label">Visibility Status</label>
                                 <div class="col-sm-10">
                                     <select class="form-select" name="status" id="published_status"
