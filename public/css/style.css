@@ -494,7 +494,7 @@ ol {
 
 .header__cart {
 	text-align: right;
-	padding: 24px 0;
+	padding: 60px 0;
 }
 
 .header__cart ul {
@@ -1421,7 +1421,7 @@ ol {
 
 .filter__item {
 	padding-top: 45px;
-	border-top: 1px solid #ebebeb;
+	border-top: 1px solid #235b14;
 	padding-bottom: 20px;
 }
 
@@ -1431,12 +1431,12 @@ ol {
 
 .filter__sort span {
 	font-size: 16px;
-	color: #6f6f6f;
+	color: #235b14;
 	display: inline-block;
 }
 
 .filter__sort .nice-select {
-	background-color: #fff;
+	background-color: #235b14;
 	border-radius: 0;
 	border: none;
 	display: inline-block;
@@ -1446,18 +1446,18 @@ ol {
 	padding-left: 18px;
 	padding-right: 30px;
 	font-size: 16px;
-	color: #1c1c1c;
+	color: #235b14;
 	font-weight: 700;
 	cursor: pointer;
 }
 
 .filter__sort .nice-select span {
-	color: #1c1c1c;
+	color: #235b14;
 }
 
 .filter__sort .nice-select:after {
-	border-bottom: 1.5px solid #1c1c1c;
-	border-right: 1.5px solid #1c1c1c;
+	border-bottom: 1.5px solid #235b14;
+	border-right: 1.5px solid #235b14;
 	height: 8px;
 	margin-top: 0;
 	right: 16px;
@@ -1491,11 +1491,11 @@ ol {
 
 .filter__found h6 {
 	font-size: 16px;
-	color: #b2b2b2;
+	color: #235b14;
 }
 
 .filter__found h6 span {
-	color: #1c1c1c;
+	color: #235b14;
 	font-weight: 700;
 	margin-right: 5px;
 }
@@ -1507,7 +1507,7 @@ ol {
 
 .filter__option span {
 	font-size: 24px;
-	color: #b2b2b2;
+	color: #235b14;
 	margin-right: 10px;
 	cursor: pointer;
 	-webkit-transition: all, 0.3s;
