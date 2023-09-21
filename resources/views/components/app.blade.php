@@ -45,7 +45,7 @@
     </div>
     <div class="humberger__menu__cart">
         <ul>
-            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+            <li><a href="/cart"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
         </ul>
     </div>
     <div class="humberger__menu__widget">
@@ -68,26 +68,15 @@
     </div>
     <nav class="humberger__menu__nav mobile-menu">
         <ul>
-            <li class="active"><a href="/">Home</a></li>
-            <li><a href="./shop-grid.html">Shop</a></li>
-            <li><a href="#">Pages</a>
-                <ul class="header__menu__dropdown">
-                    <li><a href="./shop-details.html">Shop Details</a></li>
-                    <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                    <li><a href="./checkout.html">Check Out</a></li>
-                    <li><a href="./blog-details.html">Blog Details</a></li>
-                </ul>
-            </li>
-            <li><a href="./blog.html">Blog</a></li>
-            <li><a href="./contact.html">Contact</a></li>
+            <li class="active"><a href="/">Acasa</a></li>
+            <li><a href="/shop">Magazin</a></li>
+            <li><a href="/about-us">Despre Noi</a></li>
+            <li><a href="/contact">Contact</a></li>
         </ul>
     </nav>
     <div id="mobile-menu-wrap"></div>
     <div class="header__top__right__social">
-        <a href="#"><i class="fa fa-facebook"></i></a>
-        <a href="#"><i class="fa fa-twitter"></i></a>
-        <a href="#"><i class="fa fa-linkedin"></i></a>
-        <a href="#"><i class="fa fa-pinterest-p"></i></a>
+
     </div>
 </div>
 <!-- Humberger End -->
@@ -103,12 +92,6 @@
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="header__top__right">
-                        <div class="header__top__right__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                            <a href="#"><i class="fa fa-pinterest-p"></i></a>
-                        </div>
                         @auth
                             <div class="header__top__right__auth">
                                 <form action="{{route('logout')}}" method="POST" id="logout-desktop">
@@ -140,9 +123,9 @@
             <div class="col-lg-6">
                 <nav class="header__menu">
                     <ul>
-                        <li class="active"><a href="/">Home    </a></li>
-                        <li><a href="/shop">Shop    </a></li>
-                        <li><a href="/about-us">About Us    </a></li>
+                        <li class="active"><a href="/">Acasa    </a></li>
+                        <li><a href="/shop">Magazin    </a></li>
+                        <li><a href="/about-us">Despre Noi    </a></li>
                         <li><a href="/contact">Contact    </a></li>
                     </ul>
                 </nav>
@@ -150,7 +133,7 @@
             <div class="col-lg-3">
                 <div class="header__cart">
                     <ul>
-                        <li><a href="#"><i style="font-size: 30px;" class="fa fa-shopping-bag"></i> <span style="font-size: 13px;">3</span></a></li>
+                        <li><a href="/cart"><i style="font-size: 30px;" class="fa fa-shopping-bag"></i> <span style="font-size: 13px;">3</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -184,12 +167,6 @@
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
                 <div class="footer__widget">
-                    <h6>Useful Links</h6>
-                    <ul>
-                        <li><a href="/about-us">About Us</a></li>
-                        <li><a href="/contact">Contact</a></li>
-
-                    </ul>
                 </div>
             </div>
         </div>

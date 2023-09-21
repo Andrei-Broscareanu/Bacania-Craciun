@@ -20,7 +20,7 @@
                         <div class="hero__search__form">
                             <form action="{{route('shop')}}" method="get">
                                 <input type="text" name="search" placeholder="De ce aveti nevoie astazi?">
-                                <button type="submit" class="site-btn">SEARCH</button>
+                                <button type="submit" class="site-btn">CAUTA</button>
                             </form>
                         </div>
                         <div class="hero__search__phone">
@@ -38,7 +38,7 @@
                             <span>FRUCTE FRESH</span>
                             <h2>Legume <br />100% Organice</h2>
                             <p>Ridicare gratuita din magazin</p>
-                            <a href="/shop" class="primary-btn">SHOP NOW</a>
+                            <a href="/shop" class="primary-btn">CUMPARA ACUM</a>
                         </div>
                     </div>
                 </div>

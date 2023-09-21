@@ -9,8 +9,8 @@
                     <div class="breadcrumb__text">
                         <h2>Contact Us</h2>
                         <div class="breadcrumb__option">
-                            <a href="./index.html">Home</a>
-                            <span>Contact Us</span>
+                            <a href="./index.html">Acasa</a>
+                            <span>Contacteaza-ne</span>
                         </div>
                     </div>
                 </div>

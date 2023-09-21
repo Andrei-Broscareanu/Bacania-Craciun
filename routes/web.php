@@ -29,6 +29,9 @@ Route::get('/product/{product}',[ProductController::class, 'show'])->name('view-
 Route::get('/cart',[CartController::class,'index'])->name('cart');
 Route::get('/checkout',[CheckoutController::class,'index'])->middleware('checkoutAccess')->name('checkout');
 
+//Route::get('/dashboard', function () {
+//    return view('dashboard');
+//})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
