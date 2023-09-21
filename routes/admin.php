@@ -16,6 +16,12 @@ Route::prefix('admin')
     ->group(function () {
         Route::get('/', [AdminController::class, 'index'])->name('dashboard');
 
+        Route::resource('orders', \App\Http\Controllers\Admin\AdminOrderController::class)
+            ->except([
+                'create',
+                'store',
+            ]);
+
         Route::resource('products', AdminProductController::class);
 
         Route::resource('categories', AdminCategoryController::class);

@@ -54,8 +54,6 @@ class AddToCart extends Component
 
             Cookie::queue('cart_items',json_encode($cartItems),60 * 24 * 30);
         }
-
-//        $this->dispathBrowserEvent('success',['message'=>'test']);
     }
 
     public function render()

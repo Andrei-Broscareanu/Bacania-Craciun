@@ -43,7 +43,17 @@ class ProductController extends Controller
     public function show($slug)
     {
         $product = Product::where('slug',$slug)->first();
-        return view('products.show', compact('product'));
+        $productId = $product->id;
+
+        $relatedProducts = Product::select('products.*')
+            ->whereHas('categories', function ($query) use ($productId) {
+                $query->whereHas('products', function ($query) use ($productId) {
+                    $query->where('products.id', '!=', $productId); // Specify table alias to disambiguate
+                });
+            })
+            ->get();
+
+        return view('products.show', compact('product','relatedProducts'));
     }
 }
 

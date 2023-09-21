@@ -7,6 +7,7 @@ use App\Helpers\Cart;
 use App\Models\Order;
 use App\Models\OrderProduct;
 use App\Models\Product;
+use http\Cookie;
 use Illuminate\Http\Request;
 
 class CheckoutController extends Controller
@@ -28,7 +29,6 @@ class CheckoutController extends Controller
             $user_id = null;
         }
 
-
         $orderData = [
             'user_id' => $user_id,
             'billing_email' => $request->email,
@@ -44,14 +44,16 @@ class CheckoutController extends Controller
             'cod_inregistrare_fiscala'=>$request->CIF,
             'identifier_code'=> 'GRCR' . 100 . random_int(1,2000) ,
             'status' => OrderStatus::Pending,
+            'observations'=>$request->observations,
         ];
-
+        //to do:fix qty bug
         $quantityFlag = 0;
         foreach($products as $product){
             $quantity = $cartItems[$product->id]['quantity'];
             if($quantity > $product->quantity){
                 $qtyIssueProductName = $product->name;
                 $cartItems[$product->id]['quantity'] = $product->quantity;
+                \Illuminate\Support\Facades\Cookie::queue('cart_items',json_encode($cartItems),60 * 24 * 30);
                 $quantityFlag = 1;
             }
         }
@@ -74,10 +76,10 @@ class CheckoutController extends Controller
             $orderProduct['order_id'] = $order->id;
             OrderProduct::create($orderProduct);
         }
-
+            \Illuminate\Support\Facades\Cookie::queue(\Illuminate\Support\Facades\Cookie::forget('cart_items'));
             return view('messages.success',compact('order'));
         } else {
-            return redirect('/checkout')->with('cartItems',$cartItems)->with('warning','Produsul '. $qtyIssueProductName . ' nu este disponibil in cantitatea aleasa. Asa ca am schimbat-o cu cantitatea maxima disponibila.');
+            return redirect('/checkout')->with('warning','Produsul '. $qtyIssueProductName . ' nu este disponibil in cantitatea aleasa. Asa ca am schimbat-o cu cantitatea maxima disponibila.');
         }
 
     }

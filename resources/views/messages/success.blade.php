@@ -71,7 +71,7 @@
                                 @foreach($order->products as $product)
                                     <tr>
                                         <td width="20%">
-                                            <img src="{{asset('storage/products/' . $product->image)}}" width="90" alt="">
+                                            <img src="{{asset('storage/' . $product->images[0]->filename)}}" width="90" alt="">
                                         </td>
                                         <td width="60%">
                                             <span class="font-weight-bold">{{$product->name}}</span>

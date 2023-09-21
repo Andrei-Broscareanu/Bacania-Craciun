@@ -69,7 +69,7 @@
                                     <li>{{$product->name}} ({{ $cartItems[$product->id]['quantity']}} unitati)<span>{{$product->price * $cartItems[$product->id]['quantity']}} RON</span></li>
                                     @endforeach
                                 </ul>
-                                <div class="checkout__order__total">Total <span>{{$total}} RON</span></div>
+{{--                                <div class="checkout__order__total">Total <span>{{$total}} RON</span></div>--}}
                                 <p>Comanda va fi achitata cash sau prin intermediul platii cu cardul in locatia noastra fizica de la Str. Tamasi, nr. 22, Buftea.</p>
                                 <button type="submit" class="site-btn">Plaseaza comanda</button>
                             </div>

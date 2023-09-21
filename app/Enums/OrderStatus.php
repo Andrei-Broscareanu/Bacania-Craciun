@@ -8,12 +8,12 @@ namespace App\Enums;
  */
 enum OrderStatus: string
 {
-    case Paid = 'platita';
-    case Pending = 'in asteptare';
+    case Paid = 'Platita';
+    case Pending = 'In asteptare';
     case ReadyForPickUp = 'Gata de ridicare';
-    case Cancelled = 'anulata';
+    case Cancelled = 'Anulata';
     //after payment for possible problems
-    case Completed = 'completata';
+    case Completed = 'Completata';
 
     public static function getStatuses()
     {
