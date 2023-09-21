@@ -140,9 +140,9 @@
             <div class="col-lg-6">
                 <nav class="header__menu">
                     <ul>
-                        <li class="active"><a href="/">Home    </a></li>
-                        <li><a href="/shop">Shop    </a></li>
-                        <li><a href="/about-us">About Us    </a></li>
+                        <li class="active"><a href="/">Acasa    </a></li>
+                        <li><a href="/shop">Magazin    </a></li>
+                        <li><a href="/about-us">Despre Noi    </a></li>
                         <li><a href="/contact">Contact    </a></li>
                     </ul>
                 </nav>
@@ -179,16 +179,6 @@
                         <li>Adresa: Strada Tamași 22, Buftea 070000</li>
                         <li>Telefon: 0758233155</li>
                         <li>Email: agroser.mac@gmail.com</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
-                <div class="footer__widget">
-                    <h6>Useful Links</h6>
-                    <ul>
-                        <li><a href="/about-us">About Us</a></li>
-                        <li><a href="/contact">Contact</a></li>
-
                     </ul>
                 </div>
             </div>

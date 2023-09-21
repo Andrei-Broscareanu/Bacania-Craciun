@@ -19,8 +19,8 @@
                     <div class="hero__search">
                         <div class="hero__search__form">
                             <form action="{{route('shop')}}" method="get">
-                                <input type="text" name="search" placeholder="What do yo u need?">
-                                <button type="submit" class="site-btn">SEARCH</button>
+                                <input type="text" name="search" placeholder="De ce aveti nevoie astazi?">
+                                <button type="submit" class="site-btn">CAUTA</button>
                             </form>
                         </div>
                         <div class="hero__search__phone">
@@ -64,7 +64,6 @@
                                 @endforeach
                             </ul>
                         </div>
-
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-7">
@@ -72,14 +71,14 @@
                         <div class="row">
                             <div class="col-lg-4 col-md-5">
                                 <div class="filter__sort">
-                                    <strong>Price:</strong>
-                                        <a href="{{route('shop', ['category'=> request()->category, 'sort' => 'low_high'])}}">Low to High</a>
-                                        <a href="{{route('shop', ['category'=> request()->category, 'sort' => 'high_low'])}}">High to Low</a>
+                                    <strong>Pret:</strong>
+                                        <a href="{{route('shop', ['category'=> request()->category, 'sort' => 'low_high'])}}">Pret Crescator</a>
+                                        <a href="{{route('shop', ['category'=> request()->category, 'sort' => 'high_low'])}}">Pret Descrescator</a>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="filter__found">
-                                    <h6><span>{{count($products)}}</span> Products found</h6>
+                                    <h6><span>{{count($products)}}</span>Produse gasite</h6>
                                 </div>
                             </div>
                         </div>
@@ -95,7 +94,7 @@
                                     </a>
                                 @endif
                                 <div class="product__item__text">
-                                    <h6><a href="#">{{$product->name}}</a></h6>
+                                    <h6><a href="{{route('view-product',$product->slug)}}">{{$product->name}}</a></h6>
                                     <h5>{{$product->price}} RON</h5>
                                 </div>
                             </div>

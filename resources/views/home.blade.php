@@ -20,7 +20,7 @@
                         <div class="hero__search__form">
                             <form action="{{route('shop')}}" method="get">
                                 <input type="text" name="search" placeholder="De ce aveti nevoie astazi?">
-                                <button type="submit" class="site-btn">SEARCH</button>
+                                <button type="submit" class="site-btn">Cauta</button>
                             </form>
                         </div>
                         <div class="hero__search__phone">
