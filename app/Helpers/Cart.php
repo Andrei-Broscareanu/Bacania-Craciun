@@ -12,6 +12,15 @@ class Cart
         return json_decode(request()->cookie('cart_items','[]'),true);
     }
 
+    public static function getCartTotal(){
+        list($products,$cartItems) = Cart::getProductsAndCartItems();
+        $total = 0;
+        foreach($products as $index) {
+            $total += $index->price * $cartItems[$index->id]['quantity'];
+        }
+        return $total;
+    }
+
     public static function getCartItems(){
         $request = \request();
         $user = $request->user();

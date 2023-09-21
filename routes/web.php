@@ -24,7 +24,7 @@ Route::get('/coming-soon',[IndexController::class,'tempIndex']);
 Route::get('/shop', [ProductController::class, 'shop'])->name('shop');
 Route::get('/about-us', [IndexController::class, 'aboutus'])->name('about-us');
 Route::get('/contact', [IndexController::class, 'contact'])->name('contact');
-Route::get('/product{product}',[ProductController::class, 'show'])->name('view-product');
+Route::get('/product/{product}',[ProductController::class, 'show'])->name('view-product');
 Route::get('/cart',[CartController::class,'index'])->name('cart');
 //Route::get('/dashboard', function () {
 //    return view('dashboard');

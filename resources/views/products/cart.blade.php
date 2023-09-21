@@ -17,26 +17,6 @@
 
     <!-- Shoping AddToCart Section Begin -->
     <section class="shoping-cart spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    @livewire('removeFromCart')
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6">
-                </div>
-                <div class="col-lg-6">
-                    <div class="shoping__checkout">
-                        <h5>Cart Total</h5>
-                        <ul>
-                            <li>Subtotal <span>$454.98</span></li>
-                            <li>Total <span>$454.98</span></li>
-                        </ul>
-                        <a href="#" class="primary-btn">PROCEED TO CHECKOUT</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @livewire('removeFromCart')
     </section>
 </x-app>
