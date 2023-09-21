@@ -233,6 +233,8 @@
 <script src="/js/mixitup.min.js"></script>
 <script src="/js/owl.carousel.min.js"></script>
 <script src="/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2"></script>
+
 
 <script>
     $(document).ready(function(){

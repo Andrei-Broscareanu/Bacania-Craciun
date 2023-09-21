@@ -52,6 +52,8 @@ class AddToCart extends Component
                 ];
             }
 
+            $this->emit('showNotification', 'Product added to cart!');
+
             Cookie::queue('cart_items',json_encode($cartItems),60 * 24 * 30);
         }
     }

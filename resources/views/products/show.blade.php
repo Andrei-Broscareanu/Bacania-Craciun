@@ -45,7 +45,10 @@
                         </div>
                         <div class="product__details__price">{{$product->price}} RON</div>
                         <p>{{$product->details}}</p>
-                        @livewire('AddToCart',['productSlug' => $product->slug])
+                        <div>
+                            @livewire('notification')
+                            @livewire('AddToCart',['productSlug' => $product->slug])
+                        </div>
                         <ul>
                             <li><b>Disponibilitate</b> <span>(aici sa facem functia )</span></li>
                             <li><b>Ridicare Colet</b> <span>Din magazinul nostru <samp>Zilnic intre orele 10:00-20:00</samp></span></li>
