@@ -14,6 +14,7 @@
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="/css/elegant-icons.css" type="text/css">
     <link rel="stylesheet" href="/css/nice-select.css" type="text/css">
@@ -145,6 +146,51 @@
 </header>
 <!-- Header Section End -->
 
+@if (session('success'))
+    <div class="toast" style="position: fixed;z-index:10000; bottom: 0; right: 0; width: 100%; max-width: 400px; background-color: #fff;" role="alert" aria-live="assertive" aria-atomic="true" data-delay="20000">
+        <div class="toast-header">
+            <strong class="me-auto"><i class="bi-gift-fill"></i>Mesaj success</strong>
+            <i class="fa fa-check" style="color:green;font-size:20px;" aria-hidden="true"></i>
+            <button type="button" class="ml-2 mb-1 close ml-auto" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="toast-body" style="background-color: #fff;">
+            {{session('success')}}
+        </div>
+    </div>
+@endif
+
+@if (session('error'))
+    <div class="toast" style="position: fixed;z-index:10000; bottom: 0; right: 0; width: 100%; max-width: 400px; background-color: #fff;" role="alert" aria-live="assertive" aria-atomic="true" data-delay="20000">
+        <div class="toast-header">
+            <strong class="me-auto"><i class="bi-gift-fill"></i>Mesaj eroare</strong>
+            <i class="fa fa-window-close ml-2" style="color:red;font-size:20px;" aria-hidden="true"></i>
+            <button type="button" class="ml-2 mb-1 close ml-auto" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="toast-body" style="background-color: #fff;">
+            {{session('error')}}
+        </div>
+    </div>
+@endif
+
+@if(session('warning'))
+    <div class="toast" style="position: fixed;z-index:10000; bottom: 0; right: 0; width: 100%; max-width: 400px; background-color: #fff;" role="alert" aria-live="assertive" aria-atomic="true" data-delay="20000">
+        <div class="toast-header">
+            <strong class="me-auto"><i class="bi-gift-fill"></i>Mesaj atentionare</strong>
+            <i class="fa fa-exclamation-triangle" style="color:#D1D100;font-size:20px;" aria-hidden="true"></i>
+            <button type="button" class="ml-2 mb-1 close ml-auto" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="toast-body" style="background-color: #fff;">
+            {{session('warning')}}
+        </div>
+    </div>
+@endif
+
 <main>
     {{$slot}}
 </main>
@@ -187,6 +233,18 @@
 <script src="/js/mixitup.min.js"></script>
 <script src="/js/owl.carousel.min.js"></script>
 <script src="/js/main.js"></script>
+
+<script>
+    $(document).ready(function(){
+        var toastEl = document.querySelector('.toast');
+        if(toastEl) {
+            var toast = new bootstrap.Toast(toastEl, {
+                delay: 20000 // set the delay to 10 seconds (10000 milliseconds)
+            });
+            toast.show();
+        }
+    });
+</script>
 
 
 
