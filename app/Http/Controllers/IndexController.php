@@ -16,7 +16,7 @@ class IndexController extends Controller
         return view('maintenance');
     }
 
-    public function aboutus() {
+    public function aboutUs() {
         return view('about-us');
     }
 
