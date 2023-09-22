@@ -11,4 +11,8 @@ class Category extends Model
     {
         return $this->belongsToMany(Product::class);
     }
+
+    public function images(){
+        return $this->hasMany(Image::class);
+    }
 }

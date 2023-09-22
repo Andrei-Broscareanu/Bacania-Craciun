@@ -34,4 +34,5 @@ Route::prefix('admin')
         Route::post('/product/category',[AdminProductController::class,'addCategory'])->name('product-add-categories');
         Route::delete('/product/category',[AdminProductController::class,'removeCategory'])->name('product-remove-categories');
         Route::delete('/product/image',[AdminProductController::class,'removeImage'])->name('product-remove-images');
+        Route::delete('/category/image',[AdminCategoryController::class,'removeImage'])->name('category-remove-images');
     });

@@ -19,7 +19,13 @@ class CheckoutController extends Controller
         $total = 0;
         list($products,$cartItems) = Cart::getProductsAndCartItems();
         $total = Cart::getCartTotal();
-        return view('checkout',compact('cartItems','products','total'));
+        $qtyIssueProductNames = [];
+        return view('checkout',compact('cartItems','products','total','qtyIssueProductNames'));
+    }
+
+
+    public function qtyIssueCase(Request $request){
+        dd($request);
     }
 
     public function checkout(Request $request){
@@ -53,13 +59,11 @@ class CheckoutController extends Controller
         foreach($products as $product){
             $quantity = $cartItems[$product->id]['quantity'];
             if($quantity > $product->quantity){
-                $qtyIssueProductName = $product->name;
+                $qtyIssueProductNames[] = $product->name;
                 $cartItems[$product->id]['quantity'] = $product->quantity;
-                \Illuminate\Support\Facades\Cookie::queue('cart_items',json_encode($cartItems),60 * 24 * 30);
                 $quantityFlag = 1;
             }
         }
-
 
         if($quantityFlag == 0){
         $order = Order::create($orderData);
@@ -83,9 +87,10 @@ class CheckoutController extends Controller
                 $userId = Auth::id();
                 CartItem::where('user_id', $userId)->delete();
             }
-            return view('messages.success',compact('order'));
+            $qtyIssueProductNames = [];
+            return view('messages.success',compact('order','qtyIssueProductNames'));
         } else {
-            return redirect('/checkout')->with('warning','Produsul '. $qtyIssueProductName . ' nu este disponibil in cantitatea aleasa. Asa ca am schimbat-o cu cantitatea maxima disponibila.');
+            return view('checkout',compact('cartItems','products','qtyIssueProductNames'));
         }
 
     }

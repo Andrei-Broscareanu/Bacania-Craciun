@@ -36,10 +36,16 @@
                         </div>
                     </div>
 
-                    <form action="" method="POST">
+                    <div class="checkout__input">
+                        <input style="display:none;" name="qtyIssue" class="modifiedQty" value="@foreach($qtyIssueProductNames as $name) {{$name}} @endforeach">
+                    </div>
+
+
+                    <form action="{{route('create-order')}}" method="POST">
                     @csrf
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
+
                             <div class="checkout__input">
                                 <p>Nume Complet<span>*</span></p>
                                 <input type="text" name="name" class="checkout__input__add">
@@ -112,8 +118,25 @@
         </div>
     </section>
 </x-app>
-
+<script src="/js/sweetalert/sweetalert.min.js"></script>
 <script>
+
+    window.onload = (event) => {
+       if(document.querySelector('.modifiedQty').value.trim() !== '') {
+           swal({
+               icon: 'error',
+               title: 'Produsele' + document.querySelector('.modifiedQty').value + 'nu sunt disponibile in cantitatea selectata . Asa ca le-am schimbat in cantitatea maxima disponibila.',
+               showConfirmButton: false,
+               timer: 4500
+           }).then((result) => {
+               document.querySelector('.modifiedQty').value = "";
+               console.log(1);
+           });
+
+       }
+
+        console.log(document.querySelector('.modifiedQty').innerHTML);
+    };
     var persoanaJuridicaInputs = document.querySelectorAll('.persoana-juridica');
 
     document.querySelector('#persoana-juridica-btn').addEventListener('click',function(){

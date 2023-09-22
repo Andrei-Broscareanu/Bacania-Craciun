@@ -19,6 +19,12 @@
                                 </div>
                             </div>
 
+                            <div class="row mb-3">
+                                <div class="card-body">
+                                    <input class="filepond" type="file" name="file[]" multiple>
+                                </div>
+                            </div>
+
                             <button type="submit" class="btn btn-primary">Create</button>
                         </form>
                     </div>
@@ -29,3 +35,20 @@
         </div>
     </main>
 </x-admin-nav>
+
+<script type="module">
+    FilePond.setOptions({
+        server: {
+            url: '/filepond/api',
+            process: '/process',
+            revert: '/process',
+            patch: "?patch=",
+            headers: {
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            }
+        }
+    });
+
+    const input = document.querySelector('input.filepond');
+    const pond = FilePond.create(input);
+</script>

@@ -13,4 +13,8 @@ class Image extends Model
         return $this->belongsTo(Product::class);
     }
 
+    public function categories(){
+        return $this->belongsTo(Category::class);
+    }
+
 }

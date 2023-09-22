@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Image;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Sopamo\LaravelFilepond\Filepond;
 
 class AdminCategoryController extends Controller
 {
@@ -29,7 +32,26 @@ class AdminCategoryController extends Controller
         $category = new Category();
         $category->name = $request->name;
         $category->save();
+
+        $fileponds = $request->file;
+        foreach ($fileponds as $serverId) {
+            if (!$serverId)
+                continue;
+            $filepond = app(Filepond::class);
+            $path = $filepond->getPathFromServerId($serverId);
+            $image = new Image();
+            $image->filename = $path;
+            Storage::move($path, '/public/' . $path);
+            $category->images()->save($image);
+            $category->save();
+        }
         return redirect('/admin/categories');
+    }
+
+    public function removeImage(Request $request){
+        $image = Image::where('id',$request->image_id);
+        $image->delete();
+        return back();
     }
 
     public function show(Category $category)
@@ -45,7 +67,22 @@ class AdminCategoryController extends Controller
         $category = Category::where('id',$request->category_id)->first();
         $category->name = $request->name;
         $category->update();
+        $fileponds = $request->file;
+        foreach ($fileponds as $serverId) {
+            if (!$serverId)
+                continue;
+            $filepond = app(Filepond::class);
+            $path = $filepond->getPathFromServerId($serverId);
+            $image = new Image();
+            $image->filename = $path;
+            Storage::move($path, '/public/' . $path);
+            $category->images()->save($image);
+            $category->save();
+        }
+
         return back();
+
+
     }
 
 
