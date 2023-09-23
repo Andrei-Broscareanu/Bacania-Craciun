@@ -46,6 +46,31 @@
         </div>
     </section>
 
+
+    <!-- Categories Section Begin -->
+    <section class="categories">
+        <div class="container">
+            <div class="row">
+                <div class="categories__slider owl-carousel">
+                    @foreach($categories as $category)
+                    <div class="col-lg-10">
+                        @if(count($category->images) > 0)
+                            <a href="{{ route('shop', ['category' => $category->name]) }}">
+                                <div class="categories__item set-bg" data-setbg="{{asset('storage/' . $category->images[0]->filename)}}">
+                                </div>
+                            </a>
+                            <div class="centered-text">
+                                <a href="{{ route('shop', ['category' => $category->name]) }}">{{$category->name}}</a>
+                            </div>
+                        @endif
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Categories Section End -->
+
     <!-- Featured Section Begin -->
     <section class="featured spad">
         <div class="container">

@@ -19,7 +19,8 @@ class IndexController extends Controller
     }
 
     public function aboutUs() {
-        return view('about-us');
+        $categories = Category::all();
+        return view('about-us',compact('categories'));
     }
 
     public function contact() {

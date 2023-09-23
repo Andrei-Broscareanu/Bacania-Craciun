@@ -478,7 +478,7 @@ ol {
 }
 
 .header__menu ul li a {
-	font-size: 25px;
+	font-size: 20px;
 	color: #235b14;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -518,7 +518,7 @@ ol {
 
 .header__cart ul li a i {
 	font-size: 18px;
-	color: #1c1c1c;
+	color: #235b14;
 }
 
 .header__cart ul li a span {
@@ -771,7 +771,7 @@ ol {
 }
 
 .categories__item h5 a {
-	font-size: 18px;
+	font-size: 20px;
 	color: #1c1c1c;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -3486,4 +3486,13 @@ ol {
         display: block; /* Remove any default inline spacing */
         margin: 50px auto; /* Center horizontally within .center-image */
     }
+
+    /* styles.css */
+    .centered-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+    }
+
 }

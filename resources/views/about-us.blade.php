@@ -12,11 +12,25 @@
     </section>
     <!-- Blog Details Hero End -->
 
+
+
     <!-- Blog Details Section Begin -->
     <section class="blog-details spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 col-md-10 order-md-1 order-1">
+                <div class="col-lg-4 col-md-5">
+                    <div class="blog__sidebar">
+                        <div class="blog__sidebar__item">
+                            <h4>Categories</h4>
+                            <ul>
+                                @foreach($categories as $category)
+                                    <li><a href="{{ route('shop', ['category' => $category->name]) }}">{{$category->name}}</a></li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 order-md-1 order-1">
                     <div class="blog__details__text">
                         <h3>Bună!
                             Sunt Mihai și reprezint Grădina Crăciun, ferma noastră unde producem legume și fructe cu gust inconfundabil, al celor din grădina bunicilor.</h3>

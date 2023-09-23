@@ -122,20 +122,20 @@
                     <a href="/"><img src="img/LOGOMIC.png" alt=""></a>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-7">
                 <nav class="header__menu">
                     <ul>
-                        <li class="active"><a href="/">Acasa    </a></li>
-                        <li><a href="/shop">Magazin    </a></li>
-                        <li><a href="/about-us">Despre Noi    </a></li>
-                        <li><a href="/contact">Contact    </a></li>
+                        <li class="active"><a href="/">Bacania Craciun</a></li>
+                        <li><a href="/shop">Magazin</a></li>
+                        <li><a href="/about-us">Despre Noi</a></li>
+                        <li><a href="/contact">Contact</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="col-lg-3">
                 <div class="header__cart">
                     <ul>
-                        <li><a href="/cart"><i style="font-size: 30px;" class="fa fa-shopping-bag"></i></a></li>
+                        <li><a href="/cart"><i style="font-size: 21px;" class="fa fa-shopping-bag"></i></a></li>
                     </ul>
                 </div>
             </div>
