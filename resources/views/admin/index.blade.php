@@ -72,7 +72,7 @@
                                             <i class="bi bi-currency-dollar"></i>
                                         </div>
                                         <div class="ps-3">
-                                            <h6>{{$currentRevenue}}</h6>
+                                            <h6>{{$currentRevenue}} RON</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -97,7 +97,7 @@
                                 </div>
 
                                 <div class="card-body">
-                                    <h5 class="card-title">Customers <span>| Today</span></h5>
+                                    <h5 class="card-title">New Accounts <span>| Today</span></h5>
 
                                     <div class="d-flex align-items-center">
                                         <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -154,7 +154,23 @@
                                                 <td>the user does not have an account</td>
                                             @endif
                                             <td>{{$order->billing_total}} RON</td>
-                                            <td><span class="badge bg-success">{{$order->status}}</span></td>
+                                            @if($order->status === \App\Enums\OrderStatus::Pending)
+                                            <td><span class="badge bg-warning">{{$order->status}}</span></td>
+                                                @endif
+
+                                            @if($order->status === \App\Enums\OrderStatus::Paid)
+                                                <td><span class="badge bg-success">{{$order->status}}</span></td>
+                                            @endif
+
+                                            @if($order->status === \App\Enums\OrderStatus::ReadyForPickUp)
+                                                <td><span class="badge bg-success">{{$order->status}}</span></td>
+                                            @endif
+
+                                            @if($order->status === \App\Enums\OrderStatus::Cancelled)
+                                                <td><span class="badge bg-danger">{{$order->status}}</span></td>
+                                            @endif
+
+
                                         </tr>
                                         @endforeach
                                         </tbody>
