@@ -10,11 +10,11 @@ use Livewire\Component;
 class AddToCart extends Component
 {
 
-    public $productSlug , $quantity;
+    public $productSlug;
+    public $quantity = 1;
 
     public function handle()
     {
-
         $product = Product::where('slug', $this->productSlug)->first();
         if($this->quantity === null)
             $this->quantity = 1;

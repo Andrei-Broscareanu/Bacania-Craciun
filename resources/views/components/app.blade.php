@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
@@ -56,8 +58,14 @@
                 <form action="{{route('logout')}}" method="POST" id="logout-mobile">
                     @csrf
                 </form>
-                <a style="cursor:pointer;" onclick="document.querySelector('#logout-mobile').submit();"><i class="fa fa-user"></i> Logout</a>
+                <a style="cursor:pointer;" onclick="document.querySelector('#logout-mobile').submit();"><i class="fa fa-close"></i> Iesire din cont</a>
             </div>
+
+            <div class="header__top__right__auth">
+                <a href="{{route('profile.edit')}}"><i class="fa fa-user"></i> Pagina profil</a>
+            </div>
+
+
         @else
         <div class="header__top__right__auth">
             <a href="{{route('login')}}"><i class="fa fa-user"></i> Logare</a>
@@ -74,6 +82,7 @@
             <li><a href="/shop">Magazin</a></li>
             <li><a href="/about-us">Despre Noi</a></li>
             <li><a href="/contact">Contact</a></li>
+            <li><a href="/cart">Cosul meu</a></li>
         </ul>
     </nav>
     <div id="mobile-menu-wrap"></div>
@@ -99,8 +108,13 @@
                                 <form action="{{route('logout')}}" method="POST" id="logout-desktop">
                                     @csrf
                                 </form>
-                                <a style="cursor:pointer;" onclick="document.querySelector('#logout-desktop').submit();"><i class="fa fa-user"></i> Logout</a>
+                                <a style="cursor:pointer;" onclick="document.querySelector('#logout-desktop').submit();"><i class="fa fa-close"></i>  Iesire din cont</a>
                             </div>
+
+                            <div class="header__top__right__auth">
+                                <a href="{{route('profile.edit')}}"><i class="fa fa-user"></i> Pagina profil</a>
+                            </div>
+
                         @else
                             <div class="header__top__right__auth">
                                 <a href="{{route('login')}}"><i class="fa fa-user"></i> Logare</a>
@@ -129,6 +143,7 @@
                         <li><a href="/shop">Magazin</a></li>
                         <li><a href="/about-us">Despre Noi</a></li>
                         <li><a href="/contact">Contact</a></li>
+                        <li><a href="/cart">Cosul meu</a></li>
                     </ul>
                 </nav>
             </div>

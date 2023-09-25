@@ -5,9 +5,9 @@
                 <table>
                     <thead>
                     <tr>
-                        <th class="shoping__product">Products</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
+                        <th class="shoping__product">Produse</th>
+                        <th>Pret</th>
+                        <th>Cantitate</th>
                         <th></th>
                     </tr>
                     </thead>
