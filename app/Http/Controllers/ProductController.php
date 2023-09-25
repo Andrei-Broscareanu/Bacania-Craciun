@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\ReviewStatus;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Review;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -43,6 +45,11 @@ class ProductController extends Controller
     public function show($slug)
     {
         $product = Product::where('slug',$slug)->first();
+        $reviews = $product->reviews()->where('approval_status', ReviewStatus::Approved)->get();
+        $averageRating = Review::where('product_id',$product->id)->avg('rating');
+        if(!request()->user()){
+            session()->put('url.intended',url()->current());
+        }
         $productId = $product->id;
         if($product->quantity > 5){
             $stockLevel = 'In Stoc';
@@ -58,7 +65,7 @@ class ProductController extends Controller
 
 
 
-        return view('products.show', compact('product','relatedProducts' , 'stockLevel'));
+        return view('products.show', compact('product','relatedProducts' , 'stockLevel','reviews','averageRating'));
     }
 }
 

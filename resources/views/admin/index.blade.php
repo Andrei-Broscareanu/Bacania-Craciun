@@ -147,7 +147,7 @@
                                         <tbody>
                                         @foreach($ordersFromPastWeek as $order)
                                         <tr>
-                                            <th scope="row"><a href="#">#2457</a></th>
+                                            <th scope="row"><a href="#">{{$order->identifier_code}}</a></th>
                                             @if($order->user_id)
                                             <td>{{$order->user->name}}</td>
                                             @else

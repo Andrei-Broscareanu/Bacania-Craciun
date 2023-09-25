@@ -22,6 +22,12 @@ Route::prefix('admin')
                 'store',
             ]);
 
+        Route::resource('reviews', \App\Http\Controllers\Admin\AdminReviewController::class)
+            ->except([
+                'create',
+                'store',
+            ]);
+
         Route::resource('users', \App\Http\Controllers\Admin\AdminUserController::class)
             ->except([
                 'create',

@@ -10,7 +10,7 @@ class IndexController extends Controller
 {
     public function index(){
         $categories = Category::all();
-        $featuredProducts = Product::all()->where('featured',1);
+        $featuredProducts = Product::all()->where('featured',1)->where('published',1);
         return view('home',compact('categories','featuredProducts'));
     }
 

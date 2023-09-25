@@ -111,6 +111,12 @@
                         <i class="bi bi-circle"></i><span>Users</span>
                     </a>
                 </li>
+
+                <li>
+                    <a href="{{route('admin.reviews.index')}}">
+                        <i class="bi bi-circle"></i><span>Reviews</span>
+                    </a>
+                </li>
             </ul>
         </li><!-- End
         Components Nav -->

@@ -29,6 +29,11 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
         Cart::moveCartItemsIntoDB();
 
+            if (session()->has('url.intended')) {
+            // redirect the user back to the stored URL
+            return redirect()->intended(session()->get('url.intended'));
+        }
+
         $request->session()->regenerate();
 
         return redirect()->intended(RouteServiceProvider::HOME);
