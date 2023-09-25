@@ -183,7 +183,7 @@
 
                                         <button class="primary-btn">
                                             <a style="color:white;"
-                                               href="{{route('login',['product_id'=>$product->id])}}"> Trebuie sa va inregistrati pentru a posta un review..</a>
+                                               href="{{route('login',['product_slug'=>$product->slug])}}"> Trebuie sa va inregistrati pentru a posta un review..</a>
                                         </button>
                                     @endauth
 

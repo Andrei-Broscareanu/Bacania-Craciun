@@ -3,11 +3,10 @@
 
 <div>
 <div class="product__details__quantity">
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">Cantitate</span>
+    <div class="quantity">
+        <div class="pro-qty">
+            <input type="number" wire:model="quantity">
         </div>
-        <input type="text" class="form-control" aria-label="Default" wire:model="quantity" aria-describedby="inputGroup-sizing-sm">
     </div>
 </div>
 

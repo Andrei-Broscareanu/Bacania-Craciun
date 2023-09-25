@@ -78,9 +78,7 @@
     </div>
     <nav class="humberger__menu__nav mobile-menu">
         <ul>
-            <li class="active"><a href="/">Acasa</a></li>
             <li><a href="/shop">Magazin</a></li>
-            <li><a href="/about-us">Despre Noi</a></li>
             <li><a href="/contact">Contact</a></li>
             <li><a href="/cart">Cosul meu</a></li>
         </ul>
@@ -142,8 +140,7 @@
                         <li class="active"><a href="/">Bacania Craciun</a></li>
                         <li><a href="/shop">Magazin</a></li>
                         <li><a href="/about-us">Despre Noi</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                        <li><a href="/cart">Cosul meu</a></li>
+                        <li><a href="/cart">Cosul Meu</a></li>
                     </ul>
                 </nav>
             </div>
@@ -227,6 +224,17 @@
                     </ul>
                 </div>
             </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                <div class="footer__widget">
+                    <h6>Linkuri extra</h6>
+                    <ul>
+                        <li><a href="/about-us">Despre Noi</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/cart">Cosul meu</a></li>
+                    </ul>
+                </div>
+            </div>
             <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
                 <div class="footer__widget">
                 </div>
@@ -234,6 +242,9 @@
         </div>
         <div class="row">
             <div class="col-lg-12">
+                <div class="footer__copyright">
+                    <div class="footer__copyright__payment"><img width="200" src="img/featured/anpc-sal1-1.png" alt=""></div>
+                </div>
             </div>
         </div>
     </div>
