@@ -29,11 +29,11 @@
                             </div>
                             <div class="hero__search__phone__text">
                                 <h5>0758233155</h5>
-                                <span>support 24/7 time</span>
+                                <span>Suport 24/7</span>
                             </div>
                         </div>
                     </div>
-                    <div class="hero__item set-bg" data-setbg="img/hero/banner.jpg">
+                    <div class="hero__item set-bg" data-setbg="img/Banner.jpg">
                         <div class="hero__text">
                             <span>FRUCTE FRESH</span>
                             <h2>Legume <br />100% Organice</h2>
@@ -59,9 +59,7 @@
                                 <div class="categories__item set-bg" data-setbg="{{asset('storage/' . $category->images[0]->filename)}}">
                                 </div>
                             </a>
-                            <div class="centered-text">
-                                <a href="{{ route('shop', ['category' => $category->name]) }}">{{$category->name}}</a>
-                            </div>
+                            <strong style="display: block; text-align: center; font-size: 20px;">{{$category->name}}</strong>
                         @endif
                     </div>
                     @endforeach

@@ -27,4 +27,7 @@ class IndexController extends Controller
         return view('contact');
     }
 
+    public function cookies() {
+        return view('cookies');
+    }
 }

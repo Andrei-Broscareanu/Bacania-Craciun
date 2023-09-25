@@ -55,6 +55,9 @@
     <div class="humberger__menu__widget">
         @auth
             <div class="header__top__right__auth">
+                <a href="{{route('profile.edit')}}"><i class="fa fa-user"></i> Profil</a>
+            </div>
+            <div class="header__top__right__auth">
                 <form action="{{route('logout')}}" method="POST" id="logout-mobile">
                     @csrf
                 </form>
@@ -78,7 +81,9 @@
     </div>
     <nav class="humberger__menu__nav mobile-menu">
         <ul>
+            <li><a href="/">Bacania Craciun</a></li>
             <li><a href="/shop">Magazin</a></li>
+            <li><a href="/about-us">Despre Noi</a></li>
             <li><a href="/contact">Contact</a></li>
             <li><a href="/cart">Cosul meu</a></li>
         </ul>
@@ -102,6 +107,9 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="header__top__right">
                         @auth
+                            <div class="header__top__right__auth">
+                                <a href="{{route('profile.edit')}}"><i class="fa fa-user"></i> Profil  </a>
+                            </div>
                             <div class="header__top__right__auth">
                                 <form action="{{route('logout')}}" method="POST" id="logout-desktop">
                                     @csrf
@@ -140,6 +148,7 @@
                         <li class="active"><a href="/">Bacania Craciun</a></li>
                         <li><a href="/shop">Magazin</a></li>
                         <li><a href="/about-us">Despre Noi</a></li>
+                        <li><a href="/contact">Contact</a></li>
                         <li><a href="/cart">Cosul Meu</a></li>
                     </ul>
                 </nav>
@@ -237,6 +246,12 @@
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
                 <div class="footer__widget">
+                    <h6>Useful Links</h6>
+                    <ul>
+                        <li><a href="/about-us">Despre  Noi</a></li>
+                        <li><a href="/shop">Magazin</a></li>
+                        <li><a href="/contact">Unde ne gasiti</a></li>
+                    </ul>
                 </div>
             </div>
         </div>

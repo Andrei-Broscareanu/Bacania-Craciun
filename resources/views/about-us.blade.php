@@ -58,7 +58,7 @@
                             <img src="img/a5apoza.jpg" alt="">
                         </div>
                         <h3>Spațiul destinat producției de conserve de legume și fructe, locul în care producem artizanal, din materia primă provenită din ferma noastră, diverse conserve de legume și fructe, ca de exemplu: suc de roșii, pastă de roșii, pastă de ardei kapia, castraveți murați, zacuscă de vinete, etc.</h3>
-                        <<div class="center-image">
+                        <div class="center-image">
                             <img src="img/a6apoza.jpg" alt="">
                         </div>
                         <p>Gustul deosebit al produselor noastre este apreciat de clienți, iar feedback-ul lor ne motivează să mergem mai departe și să găsim soluții pentru a deveni din ce în ce mai buni.</p>

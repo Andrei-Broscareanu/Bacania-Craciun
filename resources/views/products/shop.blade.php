@@ -29,7 +29,7 @@
                             </div>
                             <div class="hero__search__phone__text">
                                 <h5>0758233155</h5>
-                                <span>support 24/7 time</span>
+                                <span>Suport 24/7</span>
                             </div>
                         </div>
                     </div>
@@ -73,8 +73,8 @@
                             <div class="col-lg-4 col-md-5">
                                 <div class="filter__sort">
                                     <strong>Pret:</strong>
-                                        <a href="{{route('shop', ['category'=> request()->category, 'sort' => 'low_high'])}}">Pret Crescator</a>
-                                        <a href="{{route('shop', ['category'=> request()->category, 'sort' => 'high_low'])}}">Pret Descrescator</a>
+                                        <a href="{{route('shop', ['category'=> request()->category, 'sort' => 'low_high'])}}" style="text-align: center; font-size: 17px; text-decoration: none; color: #333;">Pret Crescator</a>
+                                        <a href="{{route('shop', ['category'=> request()->category, 'sort' => 'high_low'])}}" style="text-align: center; font-size: 17px; text-decoration: none; color: #333;">Pret Descrescator</a>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">

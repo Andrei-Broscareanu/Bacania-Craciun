@@ -408,7 +408,7 @@ ol {
 }
 
 .header__logo {
-	padding: 15px 30px;
+	padding: 5px 30px;
 }
 
 .header__logo a {
@@ -422,7 +422,7 @@ ol {
 .header__menu ul li {
 	list-style: none;
 	display: inline-block;
-	margin-right: 50px;
+	margin-right: 30px;
 	position: relative;
 }
 
@@ -2758,7 +2758,7 @@ ol {
 
 .contact__widget span {
 	font-size: 36px;
-	color: #7fad39;
+	color: #235b14;
 }
 
 .contact__widget h4 {
@@ -3494,5 +3494,20 @@ ol {
         align-items: center;
         font-weight: bold;
     }
+
+    .hover-effect {
+        background-color: #007bff; /* Change to your desired background color */
+        color: #fff; /* Change to your desired font color */
+        transition: background-color 0.3s ease; /* Add a smooth transition effect */
+    }
+
+    .hover-effect:hover {
+        background-color: #0056b3; /* Change to your desired hover background color */
+    }
+
+    .contact__widget i {
+        color: #235b14; /* Replace with your desired color */
+    }
+
 
 }
