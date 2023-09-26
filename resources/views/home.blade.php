@@ -32,11 +32,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="hero__item set-bg" data-setbg="img/Banner.jpg">
+                    <div class="hero__item set-bg" data-setbg="img/banner/Banner_final.jpg">
                         <div class="hero__text">
-                            <span>FRUCTE FRESH</span>
-                            <h2>Legume <br />100% Organice</h2>
-                            <p>Ridicare gratuita din magazin</p>
+                            <span style="color:#111111;">FRUCTE FRESH</span>
+                            <h2 style="color:#111111;" >Legume <br />100% Organice</h2>
+                            <p style="color:#111111;">Ridicare gratuita din magazin</p>
                             <a href="/shop" class="primary-btn">CUMPARA ACUM</a>
                         </div>
                     </div>

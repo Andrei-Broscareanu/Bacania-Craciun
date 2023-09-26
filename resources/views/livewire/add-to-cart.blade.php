@@ -1,6 +1,4 @@
 
-
-
 <div>
 <div class="product__details__quantity">
     <div class="input-group input-group-lg">
@@ -11,7 +9,7 @@
     </div>
 </div>
 
-        <button wire:click="handle" class="add-to-cart primary-btn">Adauga in cos</button>
+        <button wire:click="handle" class="add-to-cart primary-btn mt-3">Adauga in cos</button>
 </div>
 
 

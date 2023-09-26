@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>Checkout</h2>
+                        <h2>Finzalizare comanda</h2>
                     </div>
                 </div>
             </div>
@@ -48,7 +48,7 @@
 
                             <div class="checkout__input">
                                 <p>Nume Complet<span>*</span></p>
-                                <input type="text" name="name" class="checkout__input__add">
+                                <input type="text" name="name" class="checkout__input__add" value="{{old('name')}}">
                             </div>
                             <div class="checkout__input">
                                 <p>Adresa<span>*</span></p>

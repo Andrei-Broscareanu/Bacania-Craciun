@@ -63,12 +63,6 @@
                 </form>
                 <a style="cursor:pointer;" onclick="document.querySelector('#logout-mobile').submit();"><i class="fa fa-close"></i> Iesire din cont</a>
             </div>
-
-            <div class="header__top__right__auth">
-                <a href="{{route('profile.edit')}}"><i class="fa fa-user"></i> Pagina profil</a>
-            </div>
-
-
         @else
         <div class="header__top__right__auth">
             <a href="{{route('login')}}"><i class="fa fa-user"></i> Logare</a>
@@ -116,11 +110,6 @@
                                 </form>
                                 <a style="cursor:pointer;" onclick="document.querySelector('#logout-desktop').submit();"><i class="fa fa-close"></i>  Iesire din cont</a>
                             </div>
-
-                            <div class="header__top__right__auth">
-                                <a href="{{route('profile.edit')}}"><i class="fa fa-user"></i> Pagina profil</a>
-                            </div>
-
                         @else
                             <div class="header__top__right__auth">
                                 <a href="{{route('login')}}"><i class="fa fa-user"></i> Logare</a>

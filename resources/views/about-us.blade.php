@@ -50,7 +50,7 @@
                         </div>
                         <p>Pentru a obține calitatea și gustul autentic și pentru a vă oferi cele mai bune legume, îngrașământul folosit la pregătirea terenului este gunoiul de grajd macerat, în special cel provenit de la microferma noastră de păsări. Polenizarea, atât în solarii, cât și în grădină și în livadă, o facem cu ajutorul bondarilor. Solariile sunt închise cu plasă împotriva dăunătorilor. În plus, în interiorul solariilor, folosim metode ecologice de combatere a dăunătorilor și, implicit, a bolilor: benzi/ capcane cu feromoni și lămpi UV. Irigarea se face prin picurare; astfel, plantele primesc exact cantitatea necesară de apă pentru o dezvoltare naturală.
                             Drumul de la primul fir de roșie plantat de noi în grădină și până astăzi a fost unul presărat cu bune și cu rele, care, în egală măsură, ne-au condus către realizarea unor noi proiecte, toate dragi nouă, complementare activității de bază:</p>
-                            <h3>• Magazinul propriu Băcănia Grădina Crăciun, spațiu în care desfacem producția proprie, dar și produse provenite de la alți producători autohtoni.
+                            <h3>Magazinul propriu Băcănia Grădina Crăciun, spațiu în care desfacem producția proprie, dar și produse provenite de la alți producători autohtoni.
 
 
                             </h3>

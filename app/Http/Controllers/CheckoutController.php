@@ -8,7 +8,7 @@ use App\Models\CartItem;
 use App\Models\Order;
 use App\Models\OrderProduct;
 use App\Models\Product;
-use http\Cookie;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,13 +23,16 @@ class CheckoutController extends Controller
         return view('checkout',compact('cartItems','products','total','qtyIssueProductNames'));
     }
 
-
-    public function qtyIssueCase(Request $request){
-        dd($request);
-    }
-
     public function checkout(Request $request){
-        [$products, $cartItems] = Cart::getProductsAndCartItems();
+        if(!$request->cookie('cart_items')){
+            return redirect('/');
+        }
+        if($request->cookie('qtyIssue')){
+            $cartItems = json_decode(request()->cookie('qtyIssue', '[]'),true);
+            $products = Cart::getProductsAndCartItems()[0];
+        } else {
+            [$products, $cartItems] = Cart::getProductsAndCartItems();
+        }
         $user = request()->user();
         if($user){
             $user_id = $user->id;
@@ -37,6 +40,12 @@ class CheckoutController extends Controller
             $user_id = null;
         }
 
+
+
+        $total = 0;
+        foreach ($products as $product) {
+            $total += $product->price * $cartItems[$product->id]['quantity'];
+        }
         $orderData = [
             'user_id' => $user_id,
             'billing_email' => $request->email,
@@ -46,7 +55,7 @@ class CheckoutController extends Controller
             'billing_province' => $request->province,
             'billing_postalcode' => $request->postalcode,
             'billing_phone' => $request->phone,
-            'billing_total' => Cart::getCartTotal(),
+            'billing_total' => $total ,
             'denumire_societate'=>$request->DS,
             'numar_inregistrare_registrul_comertului'=>$request->NIRC,
             'cod_inregistrare_fiscala'=>$request->CIF,
@@ -66,9 +75,11 @@ class CheckoutController extends Controller
         }
 
         if($quantityFlag == 0){
+            $total = 0;
         $order = Order::create($orderData);
         foreach ($products as $product) {
             $quantity = $cartItems[$product->id]['quantity'];
+            $total += $product->price * $cartItems[$product->id]['quantity'];
             $product->quantity -= $quantity;
             $product->save();
             $orderProducts[] = [
@@ -82,14 +93,16 @@ class CheckoutController extends Controller
             $orderProduct['order_id'] = $order->id;
             OrderProduct::create($orderProduct);
         }
-            \Illuminate\Support\Facades\Cookie::queue(\Illuminate\Support\Facades\Cookie::forget('cart_items'));
+            Cookie::queue(Cookie::forget('cart_items'));
+            Cookie::queue(Cookie::forget('qtyIssue'));
+
             if(Auth()) {
                 $userId = Auth::id();
                 CartItem::where('user_id', $userId)->delete();
             }
-            return redirect('messages.success',compact('order'));
+            return view('messages.success',compact('order'));
         } else {
-
+            Cookie::queue('qtyIssue',json_encode($cartItems),60 * 24 * 30);
             return view('checkout',compact('cartItems','products','qtyIssueProductNames'));
         }
 
