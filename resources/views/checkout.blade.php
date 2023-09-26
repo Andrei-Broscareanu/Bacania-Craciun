@@ -1,3 +1,13 @@
+<style>
+    .checkout__input__add { /* Change the color to your preference */
+        padding: 8px; /* Add padding for better spacing */
+        outline: none; /* Remove the default browser outline */
+        transition: border-color 0.2s; /* Add a transition for smoother changes */
+    }
+
+
+</style>
+
 <x-app>
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg">
@@ -5,7 +15,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>Finzalizare comanda</h2>
+                        <h2>Finalizare comanda</h2>
                     </div>
                 </div>
             </div>
@@ -48,53 +58,53 @@
 
                             <div class="checkout__input">
                                 <p>Nume Complet<span>*</span></p>
-                                <input type="text" name="name" class="checkout__input__add" value="{{old('name')}}">
+                                <input type="text" name="name" style="border: 1px solid #808080;" class="checkout__input__add" value="{{old('name')}}">
                             </div>
                             <div class="checkout__input">
                                 <p>Adresa<span>*</span></p>
-                                <input type="text" name="address" class="checkout__input__add">
+                                <input type="text" name="address" style="border: 1px solid #808080;" class="checkout__input__add">
                             </div>
                             <div class="checkout__input">
                                 <p>Oras<span>*</span></p>
-                                <input type="text" name="city">
+                                <input type="text" style="border: 1px solid #808080;" name="city">
                             </div>
                             <div class="checkout__input">
                                 <p>Judet<span>*</span></p>
-                                <input type="text" name="province">
+                                <input type="text" style="border: 1px solid #808080;" name="province">
                             </div>
                             <div class="checkout__input">
                                 <p>Cos postal<span>*</span></p>
-                                <input type="text" name="postal_code">
+                                <input type="text" style="border: 1px solid #808080;" name="postal_code">
                             </div>
                             <div class="checkout__input persoana-juridica" style="display:none;">
                                 <p>CIF<span>*</span></p>
-                                <input type="text" name="CIF">
+                                <input type="text" style="border: 1px solid #808080;" name="CIF">
                             </div>
                             <div class="checkout__input persoana-juridica" style="display:none;">
                                 <p>Nr. inregistrare Registrul Comertului<span>*</span></p>
-                                <input type="text" name="NIRC">
+                                <input  style="border: 1px solid #808080;"type="text" name="NIRC">
                             </div>
                             <div class="checkout__input persoana-juridica" style="display:none;">
                                 <p>Denumire Societate<span>*</span></p>
-                                <input type="text" name="DS">
+                                <input  style="border: 1px solid #808080;"type="text" name="DS">
                             </div>
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>Numar de telefon<span>*</span></p>
-                                        <input type="text" name="phone">
+                                        <input style="border: 1px solid #808080;" type="text" name="phone">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>Email<span>*</span></p>
-                                        <input type="text" name="email">
+                                        <input style="border: 1px solid #808080;" type="text" name="email">
                                     </div>
                                 </div>
                             </div>
                             <div class="checkout__input">
                                 <p>Detalii in plus despre comanda<span>*</span></p>
-                                <input type="text"
+                                <input type="text" style="border: 1px solid #808080;"
                                        placeholder="Daca aveti posibile cerinte despre comanda..." name="observations">
                             </div>
                         </div>
@@ -134,8 +144,6 @@
            });
 
        }
-
-        console.log(document.querySelector('.modifiedQty').innerHTML);
     };
     var persoanaJuridicaInputs = document.querySelectorAll('.persoana-juridica');
 

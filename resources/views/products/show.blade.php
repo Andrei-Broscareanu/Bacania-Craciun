@@ -131,7 +131,7 @@
                                 @endfor
                             @endif
                         </div>
-                        <div class="product__details__price">{{$product->price}} RON</div>
+                        <div class="product__details__price" style="color:#235b14; ">{{$product->price}} RON</div>
                         <p>{{$product->details}}</p>
                         @if($stockLevel !== 'Nu este disponibil')
                         @livewire('AddToCart',['productSlug' => $product->slug])
@@ -149,7 +149,7 @@
                                     <li><b>Disponibilitate</b> <span class="text-warning">{{$stockLevel}}</span></li>
                             @endif
 
-                            <li><b>Ridicare</b> <span>Din magazinul nostru <samp>Zilnic intre orele 10:00-20:00</samp></span></li>
+                            <li><b>Ridicare</b> <span>Din magazinul nostru <span>Zilnic intre orele 10:00-20:00</span></span></li>
                         </ul>
                     </div>
                 </div>
@@ -252,7 +252,7 @@
                         @endif
                         <div class="product__item__text">
                             <h6><a href="#">{{$product->name}}</a></h6>
-                            <h5>{{$product->price}} RON</h5>
+                            <h5 style="color:#235b14;">{{$product->price}} RON</h5>
                         </div>
                     </div>
                 </div>

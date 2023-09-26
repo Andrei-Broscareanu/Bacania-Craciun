@@ -7,7 +7,7 @@
     <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gradina Craciun</title>
+    <title>Băcănia Grădina Crăciun</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
@@ -34,6 +34,27 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
+
+<style>
+    .header__menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .header__menu ul li {
+        display: inline-block;
+        margin-right: 10px; /* Add some margin between menu items */
+    }
+
+    .header__menu ul li a {
+        text-decoration: none;
+        font-size: 15px; /* Adjust the font size to make it smaller */
+        color: #333; /* Change the text color as needed */
+    }
+</style>
+
+
 
 <body>
 <!-- Page Preloder -->
@@ -75,7 +96,7 @@
     </div>
     <nav class="humberger__menu__nav mobile-menu">
         <ul>
-            <li><a href="/">Bacania Craciun</a></li>
+            <li><a href="/">Băcănia Grădina Crăciun</a></li>
             <li><a href="/shop">Magazin</a></li>
             <li><a href="/about-us">Despre Noi</a></li>
             <li><a href="/contact">Contact</a></li>
@@ -134,7 +155,7 @@
             <div class="col-lg-7">
                 <nav class="header__menu">
                     <ul>
-                        <li class="active"><a href="/">Bacania Craciun</a></li>
+                        <li class="active"><a href="/">Băcănia Grădina Crăciun</a></li>
                         <li><a href="/shop">Magazin</a></li>
                         <li><a href="/about-us">Despre Noi</a></li>
                         <li><a href="/contact">Contact</a></li>
@@ -237,6 +258,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="footer__copyright">
+                    <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> Toate drepturile rezervate | Băcănia Grădina Crăciun</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
                     <div class="footer__copyright__payment"><img width="200" src="img/featured/anpc-sal1-1.png" alt=""></div>
                 </div>
             </div>
