@@ -101,6 +101,13 @@
                 </div>
             </div>
         </div>
+
+        <form action="{{route('admin.users.destroy',$user)}}" method="POST">
+            @csrf
+            @method('DELETE')
+
+            <button type="submit" class="btn btn-danger mt-5">Delete User</button>
+        </form>
     </main>
 
 </x-admin-nav>

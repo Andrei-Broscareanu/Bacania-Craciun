@@ -198,6 +198,13 @@
 
             </div>
 
+            <form action="{{route('admin.products.destroy',$product)}}" method="POST">
+                @csrf
+                @method('DELETE')
+
+                <button type="submit" class="btn btn-danger mt-5">Delete Product</button>
+            </form>
+
 
         </div>
     </main>

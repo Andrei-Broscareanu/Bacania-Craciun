@@ -128,6 +128,11 @@ class AdminProductController extends Controller
         return view('admin.products.show',compact('product','categories'));
     }
 
+    public function destroy(Product $product){
+        $product->delete();
+        return redirect('/admin/products');
+    }
+
 
 
 }
