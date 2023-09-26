@@ -87,9 +87,9 @@ class CheckoutController extends Controller
                 $userId = Auth::id();
                 CartItem::where('user_id', $userId)->delete();
             }
-            $qtyIssueProductNames = [];
-            return view('messages.success',compact('order','qtyIssueProductNames'));
+            return redirect('messages.success',compact('order'));
         } else {
+
             return view('checkout',compact('cartItems','products','qtyIssueProductNames'));
         }
 

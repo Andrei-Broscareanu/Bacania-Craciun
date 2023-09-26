@@ -29,7 +29,6 @@
                             </div>
                             <div class="hero__search__phone__text">
                                 <h5>0758233155</h5>
-                                <span>Suport 24/7</span>
                             </div>
                         </div>
                     </div>

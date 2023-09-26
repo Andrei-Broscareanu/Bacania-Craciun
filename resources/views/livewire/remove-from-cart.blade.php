@@ -43,7 +43,7 @@
                 <ul>
                     <li>Total<span>{{$total}} RON</span></li>
                 </ul>
-                <a href="{{route('checkout')}}" class="primary-btn">PROCEED TO CHECKOUT</a>
+                <a href="{{route('checkout')}}" class="primary-btn">Continua spre plasarea comenzii</a>
             </div>
         </div>
     </div>

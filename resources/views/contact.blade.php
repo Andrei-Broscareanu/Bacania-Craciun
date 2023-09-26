@@ -40,8 +40,8 @@
                 <div class="col-lg-3 col-md-3 col-sm-6 text-center">
                     <div class="contact__widget">
                         <span class="far fa-clock"></span>
-                        <h4>Open time</h4>
-                        <p>10:00 am to 20:00 pm</p>
+                        <h4>Interval deschis</h4>
+                        <p>10:00 a.m -> 20:00 pm</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 text-center">

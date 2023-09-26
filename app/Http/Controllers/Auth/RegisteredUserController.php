@@ -47,6 +47,11 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
+        if (session()->has('url.intended')) {
+            // redirect the user back to the stored URL
+            return redirect()->intended(session()->get('url.intended'));
+        }
+
         Cart::moveCartItemsIntoDB();
 
         return redirect(RouteServiceProvider::HOME);

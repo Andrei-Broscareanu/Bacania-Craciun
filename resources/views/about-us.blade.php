@@ -21,7 +21,7 @@
                 <div class="col-lg-4 col-md-5">
                     <div class="blog__sidebar">
                         <div class="blog__sidebar__item">
-                            <h4>Categories</h4>
+                            <h4>Categorii</h4>
                             <ul>
                                 @foreach($categories as $category)
                                     <li><a href="{{ route('shop', ['category' => $category->name]) }}">{{$category->name}}</a></li>
