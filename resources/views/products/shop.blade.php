@@ -73,7 +73,7 @@
                                         @foreach($topProducts as $product)
                                         <a href="{{route('view-product',$product->slug)}}" class="latest-product__item">
                                             <div class="latest-product__item__pic">
-                                                <img width="75" src="{{asset('storage/' . $product->images[0]->filename)}}" alt="">
+                                                <img src="{{asset('storage/' . $product->images[0]->filename)}}" alt="">
                                             </div>
                                             <div class="latest-product__item__text">
                                                 <h6>{{$product->name}}</h6>
@@ -87,7 +87,7 @@
                                         @foreach($topRatedProducts as $product)
                                             <a href="#" class="latest-product__item">
                                                 <div class="latest-product__item__pic">
-                                                    <img width="75"  src="{{asset('storage/' . $product->images[0]->filename)}}" alt="">
+                                                    <img src="{{asset('storage/' . $product->images[0]->filename)}}" alt="">
                                                 </div>
                                                 <div class="latest-product__item__text">
                                                     <h6>{{$product->name}}</h6>
