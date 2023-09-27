@@ -40,7 +40,15 @@ class CheckoutController extends Controller
             $user_id = null;
         }
 
-
+        $validatedData = $request->validate([
+            'email' => ['required', 'email'],
+            'name' => 'required',
+            'address' => 'required',
+            'city' => 'required',
+            'province' => 'required',
+            'postal_code' => 'required',
+            'phone' => ['required']
+        ]);
 
         $total = 0;
         foreach ($products as $product) {
@@ -48,13 +56,13 @@ class CheckoutController extends Controller
         }
         $orderData = [
             'user_id' => $user_id,
-            'billing_email' => $request->email,
-            'billing_name' => $request->name,
-            'billing_address' => $request->address,
-            'billing_city' => $request->city,
-            'billing_province' => $request->province,
-            'billing_postalcode' => $request->postalcode,
-            'billing_phone' => $request->phone,
+            'billing_email' => $validatedData['email'],
+            'billing_name' => $validatedData['name'],
+            'billing_address' => $validatedData['address'],
+            'billing_city' =>$validatedData['city'],
+            'billing_province' => $validatedData['province'],
+            'billing_postalcode' => $validatedData['postal_code'],
+            'billing_phone' => $validatedData['phone'],
             'billing_total' => $total ,
             'denumire_societate'=>$request->DS,
             'numar_inregistrare_registrul_comertului'=>$request->NIRC,

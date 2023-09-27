@@ -178,6 +178,14 @@
 </header>
 <!-- Header Section End -->
 
+
+@if(session('error'))
+    @php(dd(1))
+
+    @endif
+
+
+
 @if (session('success'))
     <div class="toast" style="position: fixed;z-index:10000; bottom: 0; right: 0; width: 100%; max-width: 400px; background-color: #fff;" role="alert" aria-live="assertive" aria-atomic="true" data-delay="20000">
         <div class="toast-header">

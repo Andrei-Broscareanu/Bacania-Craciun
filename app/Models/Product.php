@@ -18,6 +18,10 @@ class Product extends Model
         return $this->belongsToMany('App\Models\Category');
     }
 
+    public function users(){
+        return $this->belongsToMany(User::class,'cart_items')->withPivot('quantity');
+    }
+
     public function images(){
         return $this->hasMany(Image::class);
     }

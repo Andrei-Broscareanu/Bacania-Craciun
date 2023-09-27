@@ -6,7 +6,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">
-                        Feedback Form</h5>
+                         Formular recenzie</h5>
                     <button type="button" class="close"
                             data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -18,7 +18,7 @@
                         @csrf
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1">Cum vi se pare acest produs?</label>
-                            <label for="exampleFormControlTextarea1">Va rog sa luati in considerare ca acest review va trebui sa fie aprobat.</label>
+                            <label for="exampleFormControlTextarea1">Va rog sa luati in considerare ca acesta recenzie va trebui sa fie aprobata.</label>
                             <div class="rating-input-wrapper d-flex justify-content-between mt-2">
                                 <label>
                                     <input type="radio" name="rating" class="selector"/>
@@ -124,10 +124,10 @@
                         <div class="product__details__rating">
                             @if(count($reviews) > 0)
                                 @for($i = 0;$i< (int)$averageRating;$i++)
-                                    <i class="fa fa-star"></i>
+                                    <i style="color:#e6e600;" class="fa fa-star"></i>
                                 @endfor
                                 @for($i = 0;$i< 5 - $averageRating  ; $i++)
-                                    <i class="fa fa-star-o"></i>
+                                        <i style="color:#111111;" class="fa fa-star"></i>
                                 @endfor
                             @endif
                         </div>
@@ -162,7 +162,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab"
-                                   aria-selected="false">Reviews <span>({{count($reviews)}})</span></a>
+                                   aria-selected="false">Recenzii <span>({{count($reviews)}})</span></a>
                             </li>
                         </ul>
                         <div class="tab-content">
@@ -183,7 +183,7 @@
 
                                         <button class="primary-btn">
                                             <a style="color:white;"
-                                               href="{{route('login',['product_slug'=>$product->slug])}}"> Trebuie sa va inregistrati pentru a posta un review..</a>
+                                               href="{{route('login',['product_slug'=>$product->slug])}}"> Trebuie sa va inregistrati pentru a posta o recenzie..</a>
                                         </button>
                                     @endauth
 
@@ -206,6 +206,14 @@
                                                                    {{$review->description}}
                                                                 </p>
                                                                 <footer class="blockquote-footer small p-1">
+                                                                    <div class="product__details__rating">
+                                                                            @for($i = 0;$i< (int)$review->rating;$i++)
+                                                                                <i style="color:#e6e600;" class="fa fa-star"></i>
+                                                                            @endfor
+                                                                            @for($i = 0;$i< 5 - $review->rating  ; $i++)
+                                                                                <i style="color:#111111;" class="fa fa-star"></i>
+                                                                            @endfor
+                                                                    </div>
                                                                     <br>
                                 <span class="small">{{$review->user->name}}
                         </span>

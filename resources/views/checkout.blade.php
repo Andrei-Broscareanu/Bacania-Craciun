@@ -59,22 +59,25 @@
                             <div class="checkout__input">
                                 <p>Nume Complet<span>*</span></p>
                                 <input type="text" name="name" style="border: 1px solid #808080;" class="checkout__input__add" value="{{old('name')}}">
+                                @error('name') <!-- Check if there are errors for the 'email' field -->
+                                <div class="alert alert-danger email">{{ $message }}</div> <!-- Display the error message -->
+                                @enderror
                             </div>
                             <div class="checkout__input">
                                 <p>Adresa<span>*</span></p>
-                                <input type="text" name="address" style="border: 1px solid #808080;" class="checkout__input__add">
+                                <input type="text" name="address" value="{{old('address')}}" style="border: 1px solid #808080;" class="checkout__input__add">
                             </div>
                             <div class="checkout__input">
                                 <p>Oras<span>*</span></p>
-                                <input type="text" style="border: 1px solid #808080;" name="city">
+                                <input type="text" style="border: 1px solid #808080;" value="{{old('city')}}" name="city">
                             </div>
                             <div class="checkout__input">
                                 <p>Judet<span>*</span></p>
-                                <input type="text" style="border: 1px solid #808080;" name="province">
+                                <input type="text" style="border: 1px solid #808080;" value="{{old('province')}}" name="province">
                             </div>
                             <div class="checkout__input">
                                 <p>Cos postal<span>*</span></p>
-                                <input type="text" style="border: 1px solid #808080;" name="postal_code">
+                                <input type="text" style="border: 1px solid #808080;" name="postal_code" value="{{old('postal_code')}}">
                             </div>
                             <div class="checkout__input persoana-juridica" style="display:none;">
                                 <p>CIF<span>*</span></p>
@@ -92,15 +95,19 @@
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>Numar de telefon<span>*</span></p>
-                                        <input style="border: 1px solid #808080;" type="text" name="phone">
+                                        <input style="border: 1px solid #808080;" type="text" name="phone" value="{{old('phone')}}">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>Email<span>*</span></p>
-                                        <input style="border: 1px solid #808080;" type="text" name="email">
+                                        <input style="border: 1px solid #808080;" type="text" name="email" value="{{ old('email') }}">
                                     </div>
+                                    @error('email') <!-- Check if there are errors for the 'email' field -->
+                                    <div class="alert alert-danger email">{{ $message }}</div> <!-- Display the error message -->
+                                    @enderror
                                 </div>
+
                             </div>
                             <div class="checkout__input">
                                 <p>Detalii in plus despre comanda<span>*</span></p>

@@ -121,7 +121,7 @@
                     </div>
                     <div class="row">
                         @foreach($products as $product)
-                            <div class="col-lg-4">
+                            <div class="col-lg-4 col-md-6 col-sm-6 mb-3">
                                 <div class="product__discount__item">
                                     <a href="{{route('view-product',$product->slug)}}">
                                     <div class="product__discount__item__pic set-bg"
@@ -155,7 +155,9 @@
                             </div>
                         @endforeach
                     </div>
+                    <div class="mt-5">
                     {{ $products->appends(request()->input())->links() }}
+                    </div>
                 </div>
             </div>
         </div>

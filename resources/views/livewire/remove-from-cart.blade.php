@@ -15,8 +15,9 @@
                     @foreach($items as $item)
                         <tr>
                             <td class="shoping__cart__item">
+                                <a href="{{route('view-product',$item->slug)}}">
                                 <img  width="75" height="75"  src="{{asset('storage/' . $item->images[0]->filename)}}" alt="">
-                                <h5>{{$item->name}}</h5>
+                                <h5>{{$item->name}}</h5></a>
                             </td>
                             <td class="shoping__cart__price">
                                 {{$item->price}} RON

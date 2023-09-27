@@ -86,7 +86,7 @@
                                     @foreach($user->products as $product)
                                         <tr>
                                             <th scope="row" class="d-sm-table-cell">
-                                                <img width="75" height="75" src="{{asset('storage/products/' . $product->image)}}" alt="">
+                                                <img width="75" height="75" src="{{asset('storage/' . $product->images[0]->filename)}}" alt="">
                                             </th>
                                             <th scope="row" class="d-sm-table-cell">{{$product->name}}</th>
                                             <th scope="row" class="d-sm-table-cell">{{$product->price}} RON</th>
