@@ -11,6 +11,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Details</h5>
                         <x-admin.data key="User Name">{{$review->user->name}}</x-admin.data>
+                        <x-admin.data key="Product Name">{{$review->product->name}}</x-admin.data>
                         <x-admin.data key="Content">{{$review->description}}</x-admin.data>
                         <x-admin.data key="Rating">{{$review->rating}} / 5</x-admin.data>
 
@@ -38,6 +39,13 @@
             </div>
 
         </div>
+
+        <form action="{{route('admin.reviews.destroy',$review)}}" method="POST">
+            @csrf
+            @method('DELETE')
+
+            <button type="submit" class="btn btn-danger mt-5">Delete Review</button>
+        </form>
 
 
 

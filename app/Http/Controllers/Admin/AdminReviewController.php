@@ -37,5 +37,11 @@ class AdminReviewController extends Controller
 
     }
 
+    public function destroy(Review $review){
+        $review->delete();
+        return redirect('/admin/reviews');
+    }
+
+
 
 }
