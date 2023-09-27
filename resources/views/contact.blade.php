@@ -62,10 +62,10 @@
         <div class="map-inside">
             <i class="icon_pin"></i>
             <div class="inside-widget">
-                <h4>Bucuresti</h4>
+                <h4>Buftea</h4>
                 <ul>
                     <li>Telefon: 0758233155</li>
-                    <li>Add: Strada Tamași 22, Buftea 070000</li>
+                    <li>Add: Strada Tamași 22, 070000</li>
                 </ul>
             </div>
         </div>

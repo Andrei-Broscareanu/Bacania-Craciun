@@ -36,10 +36,10 @@ class ProductController extends Controller
         }
 
         $topProducts = Product::all()->where('featured',1)->where('published',1)->take(3);
-        $topRatedProducts = Product::select('products.id', 'products.name')
+        $topRatedProducts = Product::select('products.id', 'products.name','products.price')
             ->join('reviews', 'products.id', '=', 'reviews.product_id')
             ->selectRaw('AVG(reviews.rating) as average_rating')
-            ->groupBy('products.id', 'products.name')
+            ->groupBy('products.id', 'products.name','products.price')
             ->orderByDesc('average_rating')
             ->take(3)
             ->get();

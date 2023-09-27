@@ -34,9 +34,9 @@
                     </div>
                     <div class="hero__item set-bg" data-setbg="img/banner/Banner_final.jpg">
                         <div class="hero__text">
-                            <span style="color:#111111;">FRUCTE FRESH</span>
-                            <h2 style="color:#111111;" >Legume <br />100% Organice</h2>
-                            <p style="color:#111111;">Ridicare gratuita din magazin</p>
+                            <span style="color:#111111;">Producem legume ,fructe și conserve cu</span>
+                            <h2 style="color:#111111;" >Gust autentic</h2>
+                            <p style="color:#111111;">ca cele din bucătăria bunicilor noștri</p>
                             <a href="/shop" class="primary-btn">CUMPARA ACUM</a>
                         </div>
                     </div>
