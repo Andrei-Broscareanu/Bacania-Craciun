@@ -1,3 +1,11 @@
+<style>
+    @media (max-width: 768px) {
+        .sidebar {
+            display: none;
+        }
+    }
+</style>
+
 <x-app>
     <section class="hero hero-normal">
         <div class="container">
@@ -65,7 +73,7 @@
                             </ul>
                         </div>
 
-                        <div class="sidebar__item">
+                        <div class="sidebar__item" id="sidebar">
                             <div class="latest-product__text">
                                 <h4>Top Produse</h4>
                                 <div class="latest-product__slider owl-carousel">

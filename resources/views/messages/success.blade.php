@@ -76,7 +76,7 @@
                                         <td width="60%">
                                             <span class="font-weight-bold">{{$product->name}}</span>
                                             <div class="product-qty">
-                                                <span class="d-block">Quantity: {{$product->pivot->quantity}}</span>
+                                                <span class="d-block">Cantitate: {{$product->pivot->quantity}}</span>
                                             </div>
                                         </td>
                                         <td width="20%">

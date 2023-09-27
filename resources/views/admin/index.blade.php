@@ -214,9 +214,6 @@
                                             <h6>Filter</h6>
                                         </li>
 
-                                        <li><a class="dropdown-item" href="#">Today</a></li>
-                                        <li><a class="dropdown-item" href="#">This Month</a></li>
-                                        <li><a class="dropdown-item" href="#">This Year</a></li>
                                     </ul>
                                 </div>
 
@@ -244,6 +241,43 @@
 
                             </div>
                     </div><!-- End Recent Activity -->
+
+
+                        <div class="card-body">
+                            <div class="card top-selling overflow-auto">
+
+                                <div class="filter">
+                                    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                        <li class="dropdown-header text-start">
+                                            <h6>Filter</h6>
+                                        </li>
+
+                                    </ul>
+                                </div>
+
+                                <div class="card-body pb-0">
+                                    <h5 class="card-title">Best Reviewed <span>| All time</span></h5>
+
+                                    <table class="table table-borderless">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">Product</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach($topRatedProducts as $product)
+                                            <tr>
+                                                <td><a href="{{route('admin.products.show',$product)}}" class="text-primary fw-bold">{{$product->name}}</a></td>
+                                            </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+
+                                </div>
+
+                            </div>
+                        </div><!-- End Recent Activity -->
 
                     <!-- Budget Report -->
 
