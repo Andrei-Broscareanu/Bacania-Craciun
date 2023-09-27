@@ -65,6 +65,41 @@
                             </ul>
                         </div>
 
+                        <div class="sidebar__item">
+                            <div class="latest-product__text">
+                                <h4>Top Produse</h4>
+                                <div class="latest-product__slider owl-carousel">
+                                    <div class="latest-prdouct__slider__item">
+                                        @foreach($topProducts as $product)
+                                        <a href="#" class="latest-product__item">
+                                            <div class="latest-product__item__pic">
+                                                <img  src="{{asset('storage/' . $product->images[0]->filename)}}" alt="">
+                                            </div>
+                                            <div class="latest-product__item__text">
+                                                <h6>{{$product->name}}</h6>
+                                                <span>{{$product->price}}</span>
+                                            </div>
+                                        </a>
+                                        @endforeach
+                                    </div>
+
+                                    <div class="latest-prdouct__slider__item">
+                                        @foreach($topRatedProducts as $product)
+                                            <a href="#" class="latest-product__item">
+                                                <div class="latest-product__item__pic">
+                                                    <img  src="{{asset('storage/' . $product->images[0]->filename)}}" alt="">
+                                                </div>
+                                                <div class="latest-product__item__text">
+                                                    <h6>{{$product->name}}</h6>
+                                                    <span>{{$product->price}}</span>
+                                                </div>
+                                            </a>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-7">
@@ -86,20 +121,38 @@
                     </div>
                     <div class="row">
                         @foreach($products as $product)
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                @if(count($product->images) > 0)
+                            <div class="col-lg-4">
+                                <div class="product__discount__item">
                                     <a href="{{route('view-product',$product->slug)}}">
-                                <div class="product__item__pic set-bg" data-setbg="{{asset('storage/' . $product->images[0]->filename)}}">
-                                </div>
+                                    <div class="product__discount__item__pic set-bg"
+                                         data-setbg="{{asset('storage/' . $product->images[0]->filename)}}">
+                                        @if($product->sale)
+                                        <div class="product__discount__percent">- {{ intval(($product->sale * 100 ) / $product->price)}}%</div>
+                                        @endif
+                                    </div>
                                     </a>
-                                @endif
-                                <div class="product__item__text">
-                                    <h6><a href="#">{{$product->name}}</a></h6>
-                                    <h5>{{$product->price}} RON</h5>
+                                    <div class="product__discount__item__text">
+                                        @if(count($product->getApprovedReviews()) > 0)
+                                        <div class="product__details__rating">
+                                                @for($i = 0;$i< (int)$product->getAvgRating();$i++)
+                                                    <i style="color:#e6e600;" class="fa fa-star"></i>
+                                                @endfor
+                                                @for($i = 0;$i< 5 - $product->getAvgRating()  ; $i++)
+                                                    <i style="color:#111111;" class="fa fa-star"></i>
+                                                @endfor
+                                        </div>
+                                        @else
+                                        <span>Nici o recenzie</span>
+                                        @endif
+                                        <h5><a href="#">{{$product->name}}</a></h5>
+                                        @if($product->sale)
+                                        <div class="product__item__price">{{$product->price}} RON<span>{{$product->price + $product->sale}} RON</span></div>
+                                            @else
+                                            <div class="product__item__price">{{$product->price}} RON</div>
+                                            @endif
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         @endforeach
                     </div>
                     {{ $products->appends(request()->input())->links() }}

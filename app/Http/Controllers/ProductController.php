@@ -12,7 +12,7 @@ class ProductController extends Controller
 {
     public function shop(Request $request)
     {
-        $paginate = 10;
+        $paginate = 6;
         $categoryName = null;
         if(request()->category){
             $products = Product::with('categories')->whereHas('categories',function($query){
@@ -35,10 +35,21 @@ class ProductController extends Controller
             $products = $products->paginate($paginate);
         }
 
+        $topProducts = Product::all()->where('featured',1)->where('published',1)->take(3);
+        $topRatedProducts = Product::select('products.id', 'products.name')
+            ->join('reviews', 'products.id', '=', 'reviews.product_id')
+            ->selectRaw('AVG(reviews.rating) as average_rating')
+            ->groupBy('products.id', 'products.name')
+            ->orderByDesc('average_rating')
+            ->take(3)
+            ->get();
+
         return view('products.shop')->with([
             'products'=>$products,
             'categories'=>$categories,
             'categoryName' => $categoryName,
+            'topProducts' => $topProducts,
+            'topRatedProducts' => $topRatedProducts,
         ]);
     }
 

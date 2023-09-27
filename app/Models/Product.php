@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\ReviewStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Scout\Searchable;
@@ -38,6 +39,14 @@ class Product extends Model
         return [
             'name' => $this->name,
         ];
+    }
+
+    public function getApprovedReviews(){
+        return $this->reviews()->where('approval_status', ReviewStatus::Approved)->get();
+    }
+
+    public function getAvgRating(){
+        return Review::where('product_id',$this->id)->avg('rating');
     }
 
     public function reviews() {

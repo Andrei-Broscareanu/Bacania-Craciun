@@ -70,12 +70,21 @@ class AdminProductController extends Controller
         } elseif($request->status === 'not_published'){
             $product->published = 0;
         }
+
         $product->name = $validatedData['name'];
         $product->price = $validatedData['price'];
         $product->quantity = $validatedData['quantity'];
         $product->details = $validatedData['details'];
         $product->description = $validatedData['description'];
         $product->featured = $request->featured;
+
+        if($request->sale > $product->price){
+            dd('action not permitted');
+        } else {
+            $product->sale = $request->sale;
+            $product->price -= $product->sale;
+        }
+
         $product->save();
 
         $fileponds = $request->file;
