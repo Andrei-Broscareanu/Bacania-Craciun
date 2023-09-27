@@ -127,7 +127,7 @@
                                     <div class="product__discount__item__pic set-bg"
                                          data-setbg="{{asset('storage/' . $product->images[0]->filename)}}">
                                         @if($product->sale)
-                                        <div class="product__discount__percent">- {{ intval(($product->sale * 100 ) / $product->price)}}%</div>
+                                        <div class="product__discount__percent">- {{ intval(($product->sale * 100 ) / ($product->price + $product->sale))}}%</div>
                                         @endif
                                     </div>
                                     </a>
