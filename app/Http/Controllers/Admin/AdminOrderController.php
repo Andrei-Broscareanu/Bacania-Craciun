@@ -17,7 +17,7 @@ class AdminOrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::paginate(10);
+        $orders = Order::paginate(1);
 
         return response()
             ->view('admin.orders.index', [

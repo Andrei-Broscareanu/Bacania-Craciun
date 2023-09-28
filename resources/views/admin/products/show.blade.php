@@ -12,7 +12,7 @@
                             @foreach($product->images as $index=>$image)
                                 @if($index === 0)
                                     <div class="carousel-item active">
-                                        <img src="{{asset('storage/' . $image->filename)}}" alt="...">
+                                        <img width="200" src="{{asset('storage/' . $image->filename)}}" alt="...">
                                         <form action="{{route('admin.product-remove-images')}}" method="POST">
                                             @csrf
                                             @method('DELETE')
@@ -22,7 +22,7 @@
                                     </div>
                                 @else
                                     <div class="carousel-item">
-                                        <img src="{{asset('storage/' . $image->filename)}}" alt="...">
+                                        <img  width="200" src="{{asset('storage/' . $image->filename)}}" alt="...">
                                         <form action="{{route('admin.product-remove-images')}}" method="POST">
                                             @csrf
                                             @method('DELETE')

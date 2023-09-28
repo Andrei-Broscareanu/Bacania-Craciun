@@ -38,9 +38,7 @@
                                 </tbody>
                             </table>
 
-                            <div class="justify-content-center">
-                                {{ $products->links() }}
-                            </div>
+                            {{ $products->appends(request()->input())->links() }}
                         </div>
                     </div>
                 </div>

@@ -78,8 +78,6 @@ class ProductController extends Controller
             ->limit(5)
             ->get();
 
-
-
         return view('products.show', compact('product','relatedProducts' , 'stockLevel','reviews','averageRating'));
     }
 }
