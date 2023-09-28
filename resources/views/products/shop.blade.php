@@ -81,7 +81,9 @@
                                         @foreach($topProducts as $product)
                                         <a href="{{route('view-product',$product->slug)}}" class="latest-product__item">
                                             <div class="latest-product__item__pic">
+                                                @if(count($product->images) > 0)
                                                 <img src="{{asset('storage/' . $product->images[0]->filename)}}" alt="">
+                                                    @endif
                                             </div>
                                             <div class="latest-product__item__text">
                                                 <h6>{{$product->name}}</h6>
@@ -95,7 +97,9 @@
                                         @foreach($topRatedProducts as $product)
                                             <a href="#" class="latest-product__item">
                                                 <div class="latest-product__item__pic">
+                                                    @if(count($product->images) > 0)
                                                     <img src="{{asset('storage/' . $product->images[0]->filename)}}" alt="">
+                                                    @endif
                                                 </div>
                                                 <div class="latest-product__item__text">
                                                     <h6>{{$product->name}}</h6>
@@ -132,12 +136,14 @@
                             <div class="col-lg-4 col-md-6 col-sm-6 mb-3">
                                 <div class="product__discount__item">
                                     <a href="{{route('view-product',$product->slug)}}">
+                                         @if(count($product->images) > 0)
                                     <div class="product__discount__item__pic set-bg"
                                          data-setbg="{{asset('storage/' . $product->images[0]->filename)}}">
                                         @if($product->sale)
                                         <div class="product__discount__percent">- {{ intval(($product->sale * 100 ) / ($product->price + $product->sale))}}%</div>
                                         @endif
                                     </div>
+                                            @endif
                                     </a>
                                     <div class="product__discount__item__text">
                                         @if(count($product->getApprovedReviews()) > 0)

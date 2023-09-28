@@ -72,7 +72,11 @@ class ProductController extends Controller
         $categoryIds = $product->categories()->pluck('categories.id');
         $relatedProducts = Product::whereHas('categories', function ($query) use ($categoryIds) {
             $query->whereIn('categories.id', $categoryIds);
-        })->where('id', '<>', $product->id)->limit(5)->get();
+        })
+            ->where('id', '<>', $product->id)
+            ->where('published', true) // Add this line to filter published products
+            ->limit(5)
+            ->get();
 
 
 
