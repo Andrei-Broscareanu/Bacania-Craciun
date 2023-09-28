@@ -34,8 +34,6 @@
         href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
         rel="stylesheet"
     />
-
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <!-- Template Main CSS File -->
     <link href="/assets/css/style.css" rel="stylesheet">
 

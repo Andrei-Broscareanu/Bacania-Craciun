@@ -1,3 +1,5 @@
+
+@vite(['resources/css/app.css', 'resources/js/app.js'])
 <x-admin-nav>
     <main id="main" class="main">
         <div class="container">
