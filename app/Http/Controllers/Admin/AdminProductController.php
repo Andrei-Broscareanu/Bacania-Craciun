@@ -115,7 +115,7 @@ class AdminProductController extends Controller
         $product->quantity = $request->quantity;
         $product->featured = $request->featured;
         $product->slug = Str::slug($request->name);
-
+        $product->published = false;
         $product->save();
         $fileponds = $request->file;
         foreach ($fileponds as $serverId) {
