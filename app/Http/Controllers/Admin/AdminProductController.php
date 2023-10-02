@@ -61,7 +61,7 @@ class AdminProductController extends Controller
             'name' => 'required|string|max:255',
             'price' => 'required|numeric|min:0',
             'quantity' => 'required|numeric|min:0',
-            'details'=> 'nullable|string',
+            'details'=> 'required|string',
             'description' => 'nullable|string',
         ]);
 
@@ -107,7 +107,6 @@ class AdminProductController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'price' => 'required|numeric|min:0',
-            'details'=> 'required',
             'description' => 'nullable|string',
         ]);
 
@@ -116,6 +115,7 @@ class AdminProductController extends Controller
         $product->featured = $request->featured;
         $product->slug = Str::slug($request->name);
         $product->published = false;
+        $product->details = $request->details;
         $product->save();
         $fileponds = $request->file;
         foreach ($fileponds as $serverId) {

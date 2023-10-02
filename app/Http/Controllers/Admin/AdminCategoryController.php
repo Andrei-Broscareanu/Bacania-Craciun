@@ -14,7 +14,6 @@ class AdminCategoryController extends Controller
     public function index()
     {
         $categories = Category::paginate(10);
-
         return response()
             ->view('admin.categories.index', [
                 'categories' => $categories
@@ -58,7 +57,8 @@ class AdminCategoryController extends Controller
     {
         return response()
             ->view('admin.categories.show', [
-                'category' => $category
+                'category' => $category,
+                'products' => $category->products,
             ]);
     }
 
